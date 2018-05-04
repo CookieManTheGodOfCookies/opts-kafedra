@@ -1,6 +1,5 @@
 $(document).ready(function () {
     var anUrl = 'controllers/AddAnnex.php';
-    console.log('document ready.');
     $('#add-annex').click(function () {
         $('#add-annex-modal').toggle();
     });
@@ -24,12 +23,12 @@ $(document).ready(function () {
             },
             success: function (reply) {
                 if (reply === 'OK') {
-                    console.log('OK');
+                    //console.log('OK');
                     location.reload();
                 }
                 else {
-                    alert('shit... check console');
-                    console.log(reply);
+                    alert('Неверные данные! Приложение с таким номером уже существует!');
+                    //console.log(reply);
                 }
             }
         });

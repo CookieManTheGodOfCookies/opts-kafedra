@@ -13,6 +13,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="stylesheets/AmazingBigTable.css">
     <script src="scripts/jquery-3.3.1.js"></script>
     <script src="scripts/adders/AddAnnexModal.js"></script>
+    <script src="scripts/editors/EditAnnexModal.js"></script>
     <style>
         #add-annex {
             background-color: black;
@@ -20,7 +21,7 @@ session_start();
             float: right;
         }
 
-        #add-annex-modal {
+        .annex-modal {
             left: 0;
             top: 0;
             width: 100%;
@@ -31,7 +32,7 @@ session_start();
             display: none;
         }
 
-        .add-annex-modal-content {
+        .annex-modal-content {
             width: 40%;
             margin: 15% auto;
             height: auto;
@@ -40,14 +41,14 @@ session_start();
             background-color: white;
         }
 
-        .close {
+        .close, .close2 {
             font-size: 18px;
             font-weight: bold;
             float: right;
             color: rgba(0, 0, 0, 0.4)
         }
 
-        .close:hover {
+        .close:hover, .close2:hover {
             cursor: pointer;
             color: black;
         }
@@ -141,18 +142,18 @@ session_start();
             <td>
                 <button type="button" class="edit-annex" id="<?=$aid?>">Редактировать</button>
             </td>
-            <td></td>
+            <td>
+                <button type="button" class="delete-annex" id="<?=$aid?>">Удалить</button>
+            </td>
         </tr>
         <?php
     }
     ?>
 </table>
 
-
-
 <!-- МОДАЛОЧКА -->
-<div id="add-annex-modal">
-    <div class="add-annex-modal-content">
+<div class="annex-modal" id="add-annex-modal">
+    <div class="annex-modal-content">
         <span class="close">&times;</span>
         <span class="contID" id="<?= $contractID ?>"></span>
 
@@ -188,6 +189,48 @@ session_start();
 
 
             <button type="button" class="modal-form-submit" id="add-annex-submit">Добавить</button>
+        </form>
+    </div>
+</div>
+
+<!-- Модалка для редактирования -->
+<div class="annex-modal" id="edit-annex-modal">
+    <div class="annex-modal-content">
+        <span class="close2">&times;</span>
+        <span class="contID" id="<?= $contractID ?>"></span>
+
+        <form id="edit-annex-form">
+            <div class="inp-label">
+                Номер
+            </div>
+            <input name="annexNumber" class="text-input" type="text" id="e-annexNumber" required>
+            <div class="inp-label">
+                Начало практики
+            </div>
+            <input name="practiceStart" class="text-input" type="date" id="e-practiceStart" required>
+            <div class="inp-label">
+                Конец практики
+            </div>
+            <input name="practiceEnd" class="text-input" type="date" id="e-practiceEnd" required>
+            <!-- Practice type select-->
+            <div class="inp-label">
+                Тип практики
+            </div>
+            <select name="practiceType" id="e-practiceType" required style="margin-top: 2px">
+                <option selected disabled>Выберите тип</option>
+                <?php
+                $practiceTypes = $sql->query("SELECT type FROM opts.practice_types");
+                for ($i = 0; $i < $practiceTypes->num_rows; $i++) {
+                    $type = $practiceTypes->fetch_assoc()["type"];
+                    ?>
+                    <option value="<?= $type ?>"><?= $type ?></option>
+                    <?php
+                }
+                ?>
+            </select>
+
+
+            <button type="button" class="modal-form-submit" id="edit-annex-submit">Сохранить</button>
         </form>
     </div>
 </div>

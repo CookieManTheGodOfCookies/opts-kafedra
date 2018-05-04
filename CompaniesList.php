@@ -9,7 +9,6 @@ session_start();
     <link rel="stylesheet" type="text/css" href="stylesheets/MainStyle.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/Navchik.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/AmazingBigTable.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/AddModals.css">
     <script src="scripts/jquery-3.3.1.js"></script>
     <script src="scripts/adders/AddCompanyModal.js"></script>
     <script src="scripts/delete/DeleteCompany.js"></script>
