@@ -1,0 +1,29 @@
+.nav {
+    border-radius: 10px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+.nav li {float: left;}
+
+.nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav li:last-child { float: right;}
+
+.nav li a:hover {
+    background-color: #808080;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #707070;
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="4869bde1-cc71-4340-ac88-988dda7260e1" name="opts-kafedra" url="http://localhost/">
+        <fileTransfer port="0" mountedRoot="/var/www/html/opts-kafedra" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
