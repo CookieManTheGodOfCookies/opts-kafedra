@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8fb34330-eb65-416e-a4a8-a5838a18e6a6" name="Default" comment="Added delete function for annexes.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/CompanyView.php" afterPath="$PROJECT_DIR$/CompanyView.php" />
-      <change beforePath="$PROJECT_DIR$/ContractView.php" afterPath="$PROJECT_DIR$/ContractView.php" />
-      <change beforePath="$PROJECT_DIR$/controllers/DeleteAnnex.php" afterPath="$PROJECT_DIR$/controllers/DeleteAnnex.php" />
-      <change beforePath="$PROJECT_DIR$/controllers/DeleteContract.php" afterPath="$PROJECT_DIR$/controllers/DeleteContract.php" />
-      <change beforePath="$PROJECT_DIR$/scripts/delete/DeleteAnnex.js" afterPath="$PROJECT_DIR$/scripts/delete/DeleteAnnex.js" />
-      <change beforePath="$PROJECT_DIR$/scripts/delete/DeleteContract.js" afterPath="$PROJECT_DIR$/scripts/delete/DeleteContract.js" />
-    </list>
+    <list default="true" id="8fb34330-eb65-416e-a4a8-a5838a18e6a6" name="Default" comment="Added delete function for annexes." />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -444,7 +436,7 @@
       <workItem from="1525409944164" duration="8668000" />
       <workItem from="1525674361904" duration="1098000" />
       <workItem from="1525939205990" duration="3618000" />
-      <workItem from="1525964974935" duration="1535000" />
+      <workItem from="1525964974935" duration="1911000" />
     </task>
     <task id="LOCAL-00001" summary="Added delete function for annexes.">
       <created>1525423419578</created>
@@ -457,7 +449,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76046000" />
+    <option name="totallyTimeSpent" value="76422000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
