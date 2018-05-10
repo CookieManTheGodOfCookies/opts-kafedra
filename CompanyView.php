@@ -1,15 +1,5 @@
 <!DOCTYPE html>
-<?php
-session_start();
-$sql = new mysqli('localhost', 'root', '');
-$sql->set_charset('utf8');
-if ($sql->connect_error) {
-    echo "SQL Connect error!";
-    return;
-}
-$id = $_GET["id"];
-$compName = $sql->query("SELECT * FROM opts.companies WHERE compID=$id")->fetch_assoc()["compName"];
-?>
+
 
 <head>
     <title>Контракты компании <?= $compName ?></title>
@@ -92,9 +82,19 @@ $compName = $sql->query("SELECT * FROM opts.companies WHERE compID=$id")->fetch_
     <li><a href="index.php">Выход</a></li>
 </ul>
 
+<?php
+session_start();
+$sql = new mysqli('localhost', 'root', '');
+$sql->set_charset('utf8');
+if ($sql->connect_error) {
+    echo "SQL Connect error!";
+    return;
+}
+$id = $_GET["id"];
+$compName = $sql->query("SELECT * FROM opts.companies WHERE compID=$id")->fetch_assoc()["compName"];
+?>
 
 <h1 style="text-align: center;">Контракты компании <?= $compName ?></h1>
-
 <button type="button" id="add-contract">Добавить контракт</button>
 <button type="button" id="<?=$id?>" class="delete-company" style="float: right; background-color: black; color: white">Удалить</button>
 <table class="amazing-big-table">
@@ -136,7 +136,7 @@ $compName = $sql->query("SELECT * FROM opts.companies WHERE compID=$id")->fetch_
                 <button type="button" id="<?=$cid?>" class="edit-contract">Редактировать</button>
             </td>
             <td>
-                <button type="button" id="<?=$cid?>" class="delete-contract">Удалить</button>
+                <button type="button" id="<?=$cid . "/" . $id?>" class="delete-contract">Удалить</button>
             </td>
         </tr>
         <?php

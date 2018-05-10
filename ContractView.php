@@ -144,7 +144,7 @@ session_start();
                 <button type="button" class="edit-annex" id="<?=$aid?>">Редактировать</button>
             </td>
             <td>
-                <button type="button" class="delete-annex" id="<?=$aid?>">Удалить</button>
+                <button type="button" class="delete-annex" id="<?=$aid . "/" . $contractID?>">Удалить</button>
             </td>
         </tr>
         <?php
