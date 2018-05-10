@@ -76,7 +76,6 @@ $studentsWithoutPractice = $sql->query("SELECT * FROM opts.students WHERE practi
                     }
                     else
                     {
-                        alert('Shit happened! Check console!');
                         console.log(reply);
                     }
                 }
