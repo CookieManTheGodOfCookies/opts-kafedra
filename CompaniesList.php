@@ -11,7 +11,6 @@ session_start();
     <link rel="stylesheet" type="text/css" href="stylesheets/AmazingBigTable.css">
     <script src="scripts/jquery-3.3.1.js"></script>
     <script src="scripts/adders/AddCompanyModal.js"></script>
-    <script src="scripts/delete/DeleteCompany.js"></script>
     <script src="scripts/editors/EditCompanyModal.js"></script>
     <style>
         .big-text {
@@ -102,7 +101,6 @@ if ($sql->connect_error) {
         <th>Контактная информация</th>
         <th></th>
         <th></th>
-        <th></th>
     </tr>
     <?php
     for ($i = 0; $i < $table->num_rows; $i++) {
@@ -115,9 +113,6 @@ if ($sql->connect_error) {
             <td><a href="CompanyView.php?id=<?=$cid?>">Подробнее</a></td>
             <td>
                 <button type="button" id="<?=$cid?>" class="edit-company">Редактировать</button>
-            </td>
-            <td>
-                <button type="button" id="<?=$cid?>" class="delete-company">Удалить</button>
             </td>
         </tr>
     <?php }

@@ -21,6 +21,7 @@ $compName = $sql->query("SELECT * FROM opts.companies WHERE compID=$id")->fetch_
     <script src="scripts/adders/AddContractModal.js"></script>
     <script src="scripts/editors/EditContractModal.js"></script>
     <script src="scripts/delete/DeleteContract.js"></script>
+    <script src="scripts/delete/DeleteCompany.js"></script>
 
     <style>
         #add-contract {
@@ -95,6 +96,7 @@ $compName = $sql->query("SELECT * FROM opts.companies WHERE compID=$id")->fetch_
 <h1 style="text-align: center;">Контракты компании <?= $compName ?></h1>
 
 <button type="button" id="add-contract">Добавить контракт</button>
+<button type="button" id="<?=$id?>" class="delete-company" style="float: right; background-color: black; color: white">Удалить</button>
 <table class="amazing-big-table">
     <tr>
         <th>

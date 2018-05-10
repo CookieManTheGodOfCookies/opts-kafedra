@@ -14,6 +14,7 @@ session_start();
     <script src="scripts/jquery-3.3.1.js"></script>
     <script src="scripts/adders/AddAnnexModal.js"></script>
     <script src="scripts/editors/EditAnnexModal.js"></script>
+    <script src="scripts/delete/DeleteAnnex.js"></script>
     <style>
         #add-annex {
             background-color: black;

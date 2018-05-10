@@ -35,6 +35,7 @@ $studentsOnPractice = $sql->query("SELECT * FROM opts.students WHERE practiceID=
     <link rel="stylesheet" type="text/css" href="stylesheets/Navchik.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/AmazingBigTable.css">
     <script src="scripts/jquery-3.3.1.js"></script>
+    <script src="scripts/RemoveStudent.js"></script>
     <style>
         #attach-student {
             float: right;
@@ -68,6 +69,7 @@ $studentsOnPractice = $sql->query("SELECT * FROM opts.students WHERE practiceID=
         <th>Отчество</th>
         <th>Студенческий</th>
         <th>Номер группы</th>
+        <th></th>
     </tr>
     <?php
     for ($i = 0; $i < $studentsOnPractice->num_rows; $i++) {
@@ -80,6 +82,9 @@ $studentsOnPractice = $sql->query("SELECT * FROM opts.students WHERE practiceID=
             <td><?= $student["patronymic"] ?></td>
             <td><?= $student["IDNumber"] ?></td>
             <td><?= $student["groupNumber"] ?></td>
+            <td>
+                <button type="button" class="remove-student" id="<?=$sid?>">Открепить</button>
+            </td>
         </tr>
         <?php
     }

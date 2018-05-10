@@ -71,12 +71,11 @@ $studentsWithoutPractice = $sql->query("SELECT * FROM opts.students WHERE practi
                 },
                 success: function (reply) {
                     if(reply === 'OK') {
-                        alert("Done!");
+                        //alert("Done!");
                         window.location.href = 'AnnexView.php?aid=' + aid;
                     }
                     else
                     {
-                        alert('Shit happened! Check console!');
                         console.log(reply);
                     }
                 }
