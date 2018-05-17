@@ -5,24 +5,50 @@ session_start();
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="stylesheets/MainStyle.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/Navchik.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/AmazingBigTable.css">
-    <title>Список студентов</title>
+    <!-- JQuery -->
     <script src="scripts/jquery-3.3.1.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="bs-css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bs-css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="bs-css/bootstrap-reboot.css">
+    <!-- Bootstrap JS -->
+    <script src="bs-js/bootstrap.bundle.js"></script>
+    <script src="bs-js/bootstrap.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/custom_styles.css">
+    <title>Список студентов</title>
+
 </head>
 <body>
 
 <!-- there will be some NAV -->
-<ul class="nav">
-    <li class="active"><a href="StudentList.php">Студенты</a></li>
-    <?php
-    if ($_SESSION['role'] == 'OPTS') {
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+    <!-- Links -->
+    <div class="navbar-header">
+        <div class="navbar-brand">OPTS</div>
+    </div>
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="StudentList.php">Студенты</a>
+        </li>
+        <?php
+        if ($_SESSION['role'] == 'OPTS') {
+            ?>
+            <li class="nav-item">
+                <a class="nav-link" href="CompaniesList.php">Компании</a>
+            </li>
+            <?php
+        }
         ?>
-        <li><a href="CompaniesList.php">Компании</a></li>
-    <?php } ?>
-    <li><a href="index.php">Выход</a></li>
-</ul>
+    </ul>
+    <ul class="navbar-nav navbar-right nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="index.php">Выход</a>
+        </li>
+    </ul>
+
+
+</nav>
 
 
 <?php
@@ -39,8 +65,9 @@ if ($sql->connect_error) {
 }
 ?>
 <!-- a table -->
-<table class="amazing-big-table" style="margin-top: 20px">
+<table class="table table-bordered table-hover">
     <!-- HEADERS -->
+    <thead>
     <tr>
         <th>Имя</th>
         <th>Фамилия</th>
@@ -49,11 +76,13 @@ if ($sql->connect_error) {
         <th>Группа</th>
         <th>Практика</th>
     </tr>
+    </thead>
+    <tbody>
     <?php
     while ($row = $table->fetch_assoc()) {
         ?>
         <tr>
-            <span class="student-id" id="<?= $row['studentID'] ?>"></span>
+            <td class="student-id" id="<?= $row['studentID'] ?>" hidden></td>
             <td><?php echo $row['name'] ?></td>
             <td><?php echo $row['surname'] ?></td>
             <td><?php echo $row['patronymic'] ?></td>
@@ -71,12 +100,13 @@ if ($sql->connect_error) {
                     $contractNumber = $sql->query("SELECT contractNumber FROM opts.contracts WHERE contractID=$contractID")->fetch_assoc()['contractNumber'];
                     $annexNumber = $sql->query("SELECT annexNumber FROM opts.annexes WHERE annexID=$practiceID")->fetch_assoc()['annexNumber'];
 
-                    echo "<h3 style='text-align: center'>Компания: $compName</h3>";
-                    echo "<p style='text-align: center'>Номер контракта: $contractNumber</p>";
-                    echo "<p style='text-align: center'>Приложение №$annexNumber</p>";
+                    echo "<p>Компания: $compName</p>";
+                    echo "<p>Номер контракта: $contractNumber</p>";
+                    echo "<p>Приложение №$annexNumber</p>";
                 } ?></td>
         </tr>
     <?php } ?>
+    </tbody>
 </table>
 
 </body>
