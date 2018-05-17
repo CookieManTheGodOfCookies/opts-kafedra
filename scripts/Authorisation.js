@@ -1,7 +1,5 @@
 $(document).ready(function () {
-    console.log('Document ready');
     $('#auth-submit').click(function () {
-        console.log('Received a click from auth-submit');
         $.ajax({
             type: 'POST',
             url: 'controllers/Authorisation.php',
@@ -10,8 +8,7 @@ $(document).ready(function () {
                 if(reply === 'OK') {
                     window.location.href = 'StudentList.php';
                 } else {
-                    window.alert(reply);
-                    console.log("REPLY FORM AUTH : " + reply);
+                    $('#dangerAlert').show('close');
                 }
             }
         })
