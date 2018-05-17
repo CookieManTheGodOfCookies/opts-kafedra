@@ -1,0 +1,12 @@
+.auth-submit-button {
+    width : 100%;
+}
+.auth-submit-button:hover {
+    background-color: #5a6268;
+}
+
+.auth-form-container {
+    border: 0.5px solid lightgray;
+    border-radius: 10px;
+    padding: 10px;
+}
