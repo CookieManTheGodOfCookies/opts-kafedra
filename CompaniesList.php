@@ -113,12 +113,12 @@ if ($sql->connect_error) {
             <div class="modal-body">
                 <form id="addCompanyForm">
                     <div class="form-group">
-                        <label for="companyNameInput" class="form-col-label">Название:</label>
-                        <input type="text" class="form-control" id="companyNameInput">
+                        <label for="companyNameInput-a" class="form-col-label">Название:</label>
+                        <input type="text" class="form-control" id="companyNameInput-a">
                     </div>
                     <div class="form-group">
-                        <label for="contactInfoInput" class="form-col-label">Контактная информация:</label>
-                        <textarea class="form-control" id="contactInfoInput"></textarea>
+                        <label for="contactInfoInput-a" class="form-col-label">Контактная информация:</label>
+                        <textarea class="form-control" id="contactInfoInput-a"></textarea>
                     </div>
                 </form>
             </div>
@@ -134,6 +134,38 @@ if ($sql->connect_error) {
     </div>
 </div>
 
-<!-- Modal Scripts -->
+<!-- Edit Company Modal -->
+<div class="modal fade" id="editCompanyModal" tabindex="-1" role="dialog" aria-labelledby="editCompanyModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editCompanyModalLabel">Редактировать компанию</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="editCompanyForm">
+                    <div class="form-group">
+                        <label for="companyNameInput-e" class="form-col-label">Название:</label>
+                        <input type="text" class="form-control" id="companyNameInput-e">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactInfoInput-e" class="form-col-label">Контактная информация:</label>
+                        <textarea class="form-control" id="contactInfoInput-e"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="w-100"></div>
+            <div class="alert alert-danger show col-sm-12 col-md-12" id="editErrorAlert" role="alert" style="display: none">
+                <p id="editErrorAlertText"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                <button type="button" class="btn" id="edit-company-submit">Сохранить изменения</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

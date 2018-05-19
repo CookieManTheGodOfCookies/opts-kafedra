@@ -8,8 +8,8 @@ $(document).ready(function () {
             type : 'POST',
             url : 'controllers/AddCompany.php',
             data : {
-                compName : $('#companyNameInput').val(),
-                contactInfo : $('#contactInfoInput').val()
+                compName : $('#companyNameInput-a').val(),
+                contactInfo : $('#contactInfoInput-a').val()
             },
             success : function (reply) {
                 var errorAlert = $('#addErrorAlert');
