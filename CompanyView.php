@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
-
+<?php
+session_start();
+?>
 <head>
     <title>Контракты компании <?= $compName ?></title>
     <meta charset="utf-8">

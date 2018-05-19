@@ -6,80 +6,53 @@ session_start();
 <head>
     <meta charset="utf-8">
     <title>Компании</title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/MainStyle.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/Navchik.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/AmazingBigTable.css">
+    <!-- JQuery -->
     <script src="scripts/jquery-3.3.1.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/custom_styles.css">
+
     <script src="scripts/adders/AddCompanyModal.js"></script>
     <script src="scripts/editors/EditCompanyModal.js"></script>
-    <style>
-        .big-text {
-            line-height: 20px;
-            width: 100%;
-            wrap-option: wrap;
-            height: 100px;
-        }
-        .inp-label {
-            width: 100%;
-            margin-bottom: 5px;
-        }
 
-        .text-input {
-            line-height: 30px;
-            width: 100%;
-            margin-bottom: 5px;
-        }
-
-        .close {
-            font-size: 18px;
-            font-weight: bold;
-            float: right;
-            color: rgba(0,0,0,0.4)
-        }
-
-        .close:hover {
-            cursor: pointer;
-            color: black;
-        }
-
-        #add-company {
-            float: right;
-            background-color: black;
-            color: white;
-        }
-        .company-modal {
-            display: none;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background-color: rgba(0, 0, 0, 0.4);
-            z-index: 1;
-            position: absolute;
-        }
-
-        .company-modal-content {
-            width: 40%;
-            height: auto;
-            margin: 15% auto;
-            background-color: white;
-            border: 1px solid black;
-            padding: 14px;
-        }
-    </style>
 
 </head>
 <body>
 <!-- NAV -->
-<ul class="nav">
-    <li><a href="StudentList.php">Студенты</a></li>
-    <?php
-    if ($_SESSION['role'] == 'OPTS') {
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+    <div class="navbar-header">
+        <div class="navbar-brand">OPTS</div>
+    </div>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="StudentList.php">Студенты</a>
+        </li>
+        <?php
+        if ($_SESSION['role'] == 'OPTS') {
+            ?>
+            <li class="nav-item active">
+                <a class="nav-link" href="CompaniesList.php">Компании</a>
+            </li>
+            <?php
+        }
         ?>
-        <li class="active"><a href="CompaniesList.php">Компании</a></li>
-    <?php } ?>
-    <li><a href="index.php">Выход</a></li>
-</ul>
+    </ul>
+    <ul class="navbar-nav navbar-right nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="index.php">Выход</a>
+        </li>
+    </ul>
+</nav>
+
 
 <?php
 $sql = new mysqli('localhost', 'root', '');
@@ -93,15 +66,18 @@ if ($sql->connect_error) {
     $table = $sql->query($query);
 }
 ?>
-<button type="button" id="add-company" style="margin-top: 20px">Добавить</button>
+<button type="button" id="add-company" class="btn addCompany">Добавить</button>
 
-<table class="amazing-big-table" style="margin-top: 20px">
+<table class="table table-bordered table-hover">
+    <thead>
     <tr>
         <th>Название</th>
         <th>Контактная информация</th>
         <th></th>
         <th></th>
     </tr>
+    </thead>
+    <tbody>
     <?php
     for ($i = 0; $i < $table->num_rows; $i++) {
         $row = $table->fetch_assoc();
@@ -110,54 +86,54 @@ if ($sql->connect_error) {
         <tr>
             <td><?php echo $row['compName'] ?></td>
             <td><?php echo $row['contactInfo'] ?></td>
-            <td><a href="CompanyView.php?id=<?=$cid?>">Подробнее</a></td>
             <td>
-                <button type="button" id="<?=$cid?>" class="edit-company">Редактировать</button>
+                <button type="button" class="btn btn-secondary"
+                        onclick="window.location.href='CompanyView.php?id=<?= $cid ?>'">Подробнее
+                </button>
+            </td>
+            <td>
+                <button type="button" id="<?= $cid ?>" class="edit-company btn btn-secondary">Редактировать</button>
             </td>
         </tr>
     <?php }
-
     ?>
+    </tbody>
 </table>
 
-
-
 <!-- Add Company Modal -->
-<div class="company-modal" id="add-company-modal">
-    <div class="company-modal-content">
-        <span class="close" id="close">&times;</span>
-        <form id="add-company-form">
-            <div class="inp-label">
-                Название:
-            </div>
-            <input type="text" name="compName" class="text-input" required>
 
-            <div class="inp-label">
-                Контактная информация:
+<div class="modal fade" id="addCompanyModal" tabindex="-1" role="dialog" aria-labelledby="addCompanyModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addCompanyModalLabel">Добавить компанию</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
             </div>
-            <textarea name="contactInfo" class="big-text" required></textarea>
-            <input id="add-company-submit" class="modal-form-submit" type="button" name="submit" value="Добавить">
-        </form>
+            <div class="modal-body">
+                <form id="addCompanyForm">
+                    <div class="form-group">
+                        <label for="companyNameInput" class="form-col-label">Название:</label>
+                        <input type="text" class="form-control" id="companyNameInput">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactInfoInput" class="form-col-label">Контактная информация:</label>
+                        <textarea class="form-control" id="contactInfoInput"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="w-100"></div>
+            <div class="alert alert-danger show col-sm-12 col-md-12" id="addErrorAlert" role="alert" style="display: none">
+                <p id="addErrorAlertText"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                <button type="button" class="btn" id="add-company-submit">Добавить</button>
+            </div>
+        </div>
     </div>
 </div>
 
-<!-- Edit Company Modal -->
-<div class="company-modal" id="edit-company-modal">
-    <div class="company-modal-content">
-        <span class="close" id="close">&times;</span>
-        <form id="edit-company-form">
-            <div class="inp-label">
-                Название:
-            </div>
-            <input type="text" name="compName" id="e-compName" class="text-input" required>
-            <div class="inp-label">
-                Контактная информация:
-            </div>
-            <textarea name="contactInfo" id="e-contactInfo" class="big-text" required></textarea>
-            <input id="edit-company-submit" class="modal-form-submit" type="button" name="submit" value="Сохранить">
-        </form>
-    </div>
-</div>
-
+<!-- Modal Scripts -->
 </body>
 </html>

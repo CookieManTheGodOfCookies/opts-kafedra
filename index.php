@@ -20,7 +20,7 @@
 
 <div class="container">
     <div class="row justify-content-md-center">
-        <div class="col-sm-4 col-md-4 col-xs-12" style="margin-top: 130px">
+        <div class="col-sm-6 col-md-4 col-xs-12" style="margin-top: 130px">
 
             <div class="col-sm-12 col-md-12 col-xs-12 auth-form-container">
                 <form id="auth-form" method="post">
@@ -36,7 +36,7 @@
                 </form>
             </div>
             <div class="w-100"></div>
-            <div class="alert alert-danger show col-sm-12 col-md-12" id="dangerAlert" role="alert" style="display: none">Invalid data!
+            <div class="alert alert-danger show col-sm-12 col-md-12" id="dangerAlert" role="alert" style="display: none">Неверные данные!
             </div>
         </div>
     </div>

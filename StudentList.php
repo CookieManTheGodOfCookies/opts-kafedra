@@ -8,12 +8,17 @@ session_start();
     <!-- JQuery -->
     <script src="scripts/jquery-3.3.1.js"></script>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="bs-css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="bs-css/bootstrap-grid.css">
-    <link rel="stylesheet" type="text/css" href="bs-css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+
     <!-- Bootstrap JS -->
-    <script src="bs-js/bootstrap.bundle.js"></script>
-    <script src="bs-js/bootstrap.js"></script>
+    <!--<script src="bs-js/bootstrap.bundle.js"></script>-->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="stylesheets/custom_styles.css">
     <title>Список студентов</title>

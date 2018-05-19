@@ -2,7 +2,7 @@
 
 if(empty($_POST['compName']) || empty($_POST['contactInfo']))
 {
-    echo 'Empty Fields!';
+    echo 'Empty';
     return;
 }
 
@@ -13,14 +13,14 @@ $sql = new mysqli('localhost', 'root', '');
 $sql->set_charset('utf8');
 if($sql->connect_error)
 {
-    echo 'SQL Connect Error!';
+    echo 'SQL Connect Error';
     return;
 }
 
 $query = "INSERT INTO opts.companies (compName, contactInfo) VALUES ('$cName', '$cInfo')";
 $sql->query($query);
 if($sql->errno) {
-    echo 'Query error!';
+    echo 'Dublicate data';
     return;
 }
 else {
