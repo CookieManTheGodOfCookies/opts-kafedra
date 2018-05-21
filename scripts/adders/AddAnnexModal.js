@@ -1,36 +1,35 @@
 $(document).ready(function () {
     var anUrl = 'controllers/AddAnnex.php';
     $('#add-annex').click(function () {
-        $('#add-annex-modal').toggle();
-    });
-
-    $('.close').click(function () {
-        $('#add-annex-modal').toggle();
-    });
-
-    $('#add-annex-submit').click(function () {
-        console.log('clicked shit');
-
-        $.ajax({
-            type: 'POST',
-            url: anUrl,
-            data: {
-                "annexNumber": $('#annexNumber').val(),
-                "practiceStart": $('#practiceStart').val(),
-                "practiceEnd": $('#practiceEnd').val(),
-                "contractID": $('.contID').attr('id'),
-                "practiceType": $('#practiceType').val()
-            },
-            success: function (reply) {
-                if (reply === 'OK') {
-                    //console.log('OK');
-                    location.reload();
+        $('#add-annex-modal').modal('show');
+        
+        $('#add-annex-submit').click(function () {
+            $.ajax({
+                type : 'POST',
+                url : anUrl,
+                data : {
+                    annexNumber : $('#annexNumberInput-a').val(),
+                    practiceStart : $('#practiceStartInput-a').val(),
+                    practiceEnd : $('#practiceEndInput-a').val(),
+                    contractID : $('.contID').attr('id'),
+                    practiceType : $('#practiceTypeSelect-a').val()
+                },
+                success : function (reply) {
+                    var addErrorAlert = $('#addErrorAlert');
+                    var addErrorAlertText = $('#addErrorAlertText');
+                    if(reply === 'OK') location.reload();
+                    else if(reply === 'Empty')
+                    {
+                        addErrorAlertText.text("Заполните все поля!");
+                        addErrorAlert.show('close');
+                    }
+                    else if(reply === 'Dublicate')
+                    {
+                        addErrorAlertText.text("Приложение с таким номером уже существует!");
+                        addErrorAlert.show('close');
+                    }
                 }
-                else {
-                    alert('Неверные данные! Приложение с таким номером уже существует!');
-                    //console.log(reply);
-                }
-            }
+            });
         });
     });
 });

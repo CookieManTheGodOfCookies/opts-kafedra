@@ -5,7 +5,7 @@ if(empty($_POST["annexNumber"])
     || empty($_POST["practiceType"])
     || empty($_POST["annexID"]))
 {
-    echo 'Empty fields!';
+    echo 'Empty';
     return;
 }
 $annexID = $_POST["annexID"];
@@ -20,7 +20,7 @@ $pid = $sql->query("SELECT pid FROM opts.practice_types WHERE type='$practiceTyp
 $sql->query("UPDATE opts.annexes SET annexNumber='$annexNumber', practiceStart='$practiceStart', practiceEnd='$practiceEnd', practiceType=$pid WHERE annexID=$annexID");
 if($sql->errno)
 {
-    echo $sql->error;
+    echo 'Dublicate';
     return;
 }
 else echo 'OK';
