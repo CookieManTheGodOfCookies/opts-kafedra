@@ -1,7 +1,6 @@
 $(document).ready(function () {
     var annexID = 0;
     $('.edit-annex').click(function () {
-            console.log('suka');
             $('#edit-annex-modal').modal('show');
             annexID = $(this).attr('id');
             $.ajax({

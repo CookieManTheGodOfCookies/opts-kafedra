@@ -220,4 +220,25 @@ session_start();
         </div>
     </div>
 </div>
+
+<!-- delete annex warning -->
+<div class="modal fade" id="deleteWarning" tabindex="-1" role="dialog" aria-labelledby="deleteWarningLabel">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteWarningLabel">Удаление контракта</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-labelledby="Close">
+                    <span aria-hidden="true">&times</span></button>
+            </div>
+            <div class="modal-body">
+                <p id="warningDialogText"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                <button class="btn btn-danger" id="deleteConfirm">Удалить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>

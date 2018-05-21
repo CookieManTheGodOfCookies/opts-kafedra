@@ -197,6 +197,7 @@ $compName = $sql->query("SELECT * FROM opts.companies WHERE compID=$id")->fetch_
     </div>
 </div>
 
+<!-- warning -->
 <div class="modal fade" id="deleteWarning" tabindex="-1" role="dialog" aria-labelledby="deleteWarningLabel">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
