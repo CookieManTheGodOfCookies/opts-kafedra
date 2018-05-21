@@ -31,38 +31,49 @@ $studentsOnPractice = $sql->query("SELECT * FROM opts.students WHERE practiceID=
     <title>
         Приложение № <?= $annexNumber ?>
     </title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/MainStyle.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/Navchik.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/AmazingBigTable.css">
+    <!-- JQuery -->
     <script src="scripts/jquery-3.3.1.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/custom_styles.css">
     <script src="scripts/RemoveStudent.js"></script>
-    <style>
-        #attach-student {
-            float: right;
-            background-color: black;
-            color: white;
-        }
-    </style>
 </head>
 <body>
 <!-- NAV -->
-<ul class="nav">
-    <li><a href="StudentList.php">Студенты</a></li>
-    <?php
-    if ($_SESSION['role'] == 'OPTS') {
-        ?>
-        <li><a href="CompaniesList.php">Компании</a></li>
-    <?php } ?>
-    <li><a href="index.php">Выход</a></li>
-</ul>
+<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+    <div class="navbar-header">
+        <div class="navbar-brand">
+            OPTS
+        </div>
+    </div>
+    <ul class="navbar-nav">
+        <li class="navbar-item"><a class="nav-link" href="StudentList.php">Студенты</a></li>
+        <?php
+        if ($_SESSION['role'] == 'OPTS') {
+            ?>
+            <li class="navbar-item"><a class="nav-link" href="CompaniesList.php">Компании</a></li>
+        <?php } ?>
+    </ul>
+    <ul class="navbar-nav nav navbar-right ml-auto">
+        <li class="navbar-item"><a class="nav-link" href="index.php">Выход</a></li>
+    </ul>
 
-<h2 style="text-align: center">Компания: <?= $compName ?></h2>
-<h2 style="text-align: center">Контракт № <?= $contractNumber ?></h2>
-<h2 style="text-align: center">Приложение № <?= $annexNumber ?></h2>
+</nav>
 
-<h1 style="text-align: center">Список прикрепленных студентов</h1>
-<a href="AddStudent.php?aid=<?=$annexID?>" id="attach-student">Добавить студента</a>
-<table class="amazing-big-table">
+<h5 style="text-align: center">Компания: <?= $compName ?></h5>
+<h5 style="text-align: center">Контракт № <?= $contractNumber ?></h5>
+<h5 style="text-align: center">Приложение № <?= $annexNumber ?></h5>
+
+<h5 style="text-align: center">Список прикрепленных студентов</h5>
+<button type="button" class="btn" onclick="location.href='AddStudent.php?aid=<?=$annexID?>'" style="float: right">Добавить студента</button>
+<table class="table table-bordered table-hover">
+    <thead>
     <tr>
         <th>Имя</th>
         <th>Фамилия</th>
@@ -71,6 +82,8 @@ $studentsOnPractice = $sql->query("SELECT * FROM opts.students WHERE practiceID=
         <th>Номер группы</th>
         <th></th>
     </tr>
+    </thead>
+    <tbody>
     <?php
     for ($i = 0; $i < $studentsOnPractice->num_rows; $i++) {
         $student = $studentsOnPractice->fetch_assoc();
@@ -83,12 +96,13 @@ $studentsOnPractice = $sql->query("SELECT * FROM opts.students WHERE practiceID=
             <td><?= $student["IDNumber"] ?></td>
             <td><?= $student["groupNumber"] ?></td>
             <td>
-                <button type="button" class="remove-student" id="<?=$sid?>">Открепить</button>
+                <button type="button" class="btn btn-danger remove-student" id="<?=$sid?>">Открепить</button>
             </td>
         </tr>
         <?php
     }
     ?>
+    </tbody>
 </table>
 
 </body>
