@@ -1,44 +1,54 @@
 $(document).ready(function () {
     var contID = 0;
+    $('#editContractForm').keydown(function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            return false;
+        }
+    });
     $('.edit-contract').click(function () {
-        $('#edit-contract-modal').show();
         contID = $(this).attr('id');
-        console.log(contID);
+        $('#editContractModal').modal('show');
+        
         $.ajax({
             type : 'POST',
             url : 'controllers/GetContractDataById.php',
-            data :
-                {
-                    contractID : contID
-                },
-            success : function (reply) {
-                $('#e-contractNumber').val(reply.contractNumber);
-                $('#e-dateOfContract').val(reply.dateOfContract);
-                $('#e-expirationDate').val(reply.expirationDate);
-            }
-        });
-    });
-    $('.close2').click(function () {
-        $('#edit-contract-modal').hide();
-    });
-    $('#edit-contract-submit').click(function () {
-        $.ajax({
-            type : 'POST',
-            url : 'controllers/EditContract.php',
             data : {
-                contractID : contID,
-                contractNumber : $('#e-contractNumber').val(),
-                dateOfContract : $('#e-dateOfContract').val(),
-                expirationDate : $('#e-expirationDate').val()
+                contractID : contID
             },
             success : function (reply) {
-                if(reply === 'OK') window.location.reload();
-                else
-                {
-                    alert("Неверные данные! Контракт с таким номером уже существует!");
-                    console.log(reply);
-                }
+                $('#contractNumberInput-e').val(reply.contractNumber);
+                $('#dateOfContractInput-e').val(reply.dateOfContract);
+                $('#expirationDateInput-e').val(reply.expirationDate);
             }
-        })
+        });
+
+        $('#editContractSubmit').click(function () {
+            $.ajax({
+                type : 'POST',
+                url : 'controllers/EditContract.php',
+                data : {
+                    contractID : contID,
+                    contractNumber : $('#contractNumberInput-e').val(),
+                    dateOfContract : $('#dateOfContractInput-e').val(),
+                    expirationDate : $('#expirationDateInput-e').val()
+                },
+                success : function (reply) {
+                    var editErrorAlert = $('#editErrorAlert');
+                    var editErrorAlertText = $('#editErrorAlertText');
+                    if(reply === 'OK') location.reload();
+                    else if(reply === 'Empty')
+                    {
+                        editErrorAlertText.text("Заполните все поля!");
+                        editErrorAlert.show('close');
+                    }
+                    else if(reply === 'Dublicate')
+                    {
+                        editErrorAlertText.text("Контракт с таким номером уже существует!");
+                        editErrorAlert.show('close');
+                    }
+                }
+            });
+        });
     });
 });

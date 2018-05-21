@@ -2,7 +2,7 @@
 
 if(empty($_POST["contractNumber"]) || empty($_POST["expirationDate"]) || empty($_POST["dateOfContract"]) || empty($_POST["compID"]))
 {
-    echo "Some of fields is empty!";
+    echo "Empty";
     return;
 }
 
@@ -23,7 +23,7 @@ $query = "INSERT INTO opts.contracts (contractNumber, dateOfContract, expiration
 $sql->query($query);
 if($sql->errno)
 {
-    echo $sql->error;
+    echo 'Dublicate';
     return;
 }
 else

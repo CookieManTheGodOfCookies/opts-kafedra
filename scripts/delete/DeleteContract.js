@@ -4,17 +4,19 @@ $(document).ready(function () {
     $('.delete-contract').click(function () {
         contractID = $(this).attr('id').split("/")[0];
         companyID = $(this).attr('id').split("/")[1];
-        if(confirm("Вы действительно хотите удалить контракт?\nВсе связанные с ним приложения удалятся.")) {
+        $('#warningDialogText').text("Вы действительно хотите удалить контракт?\nВсе связанные с ним приложения удалятся.");
+        $('#deleteWarning').modal('show');
+        $('#deleteConfirm').click(function () {
             $.ajax({
-                type: 'POST',
-                url: 'controllers/DeleteContract.php',
-                data: {
-                    contractID: contractID
+                type : 'POST',
+                url : 'controllers/DeleteContract.php',
+                data : {
+                    contractID : contractID
                 },
-                success: function (reply) {
-                    if (reply === 'OK') window.location.href = "CompanyView.php?id=" + companyID;
+                success : function (reply) {
+                    if(reply === 'OK') location.href = "CompanyView.php?id=" + companyID
                 }
             });
-        }
+        });
     });
 });

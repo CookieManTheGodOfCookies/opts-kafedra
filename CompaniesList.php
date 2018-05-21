@@ -113,11 +113,11 @@ if ($sql->connect_error) {
             <div class="modal-body">
                 <form id="addCompanyForm">
                     <div class="form-group">
-                        <label for="companyNameInput-a" class="form-col-label">Название:</label>
+                        <label for="companyNameInput-a" class="col-form-label">Название:</label>
                         <input type="text" class="form-control" id="companyNameInput-a">
                     </div>
                     <div class="form-group">
-                        <label for="contactInfoInput-a" class="form-col-label">Контактная информация:</label>
+                        <label for="contactInfoInput-a" class="col-form-label">Контактная информация:</label>
                         <textarea class="form-control" id="contactInfoInput-a"></textarea>
                     </div>
                 </form>

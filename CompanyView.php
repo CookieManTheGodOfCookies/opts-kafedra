@@ -6,83 +6,53 @@ session_start();
 <head>
     <title>Контракты компании <?= $compName ?></title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="stylesheets/MainStyle.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/Navchik.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/AmazingBigTable.css">
+    <!-- JQuery -->
     <script src="scripts/jquery-3.3.1.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/custom_styles.css">
+    <!-- More JS -->
     <script src="scripts/adders/AddContractModal.js"></script>
     <script src="scripts/editors/EditContractModal.js"></script>
     <script src="scripts/delete/DeleteContract.js"></script>
     <script src="scripts/delete/DeleteCompany.js"></script>
 
-    <style>
-        #add-contract {
-            float: right;
-            background-color: black;
-            color: white;
-        }
-
-        .contract-modal {
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            background-color: rgba(0, 0, 0, 0.4);
-            top: 0;
-            left: 0;
-            display: none;
-            position: absolute;
-        }
-
-        .contract-modal-content {
-            width: 40%;
-            height: auto;
-            margin: 15% auto;
-            background-color: white;
-            border: 1px solid black;
-            padding: 14px;
-        }
-
-        .inp-label {
-            width: 100%;
-            margin-bottom: 5px;
-        }
-
-        .text-input {
-            line-height: 30px;
-            width: 100%;
-            margin-bottom: 5px;
-        }
-
-        .close , .close2 {
-            font-size: 18px;
-            font-weight: bold;
-            float: right;
-            color: rgba(0, 0, 0, 0.4)
-        }
-
-        .close:hover , .close2:hover{
-            cursor: pointer;
-            color: black;
-        }
-
-        .modal-form-submit {
-            color: white;
-            background-color: black;
-            width: 100%;
-        }
-    </style>
 </head>
 <body>
 <!-- NAV -->
-<ul class="nav">
-    <li><a href="StudentList.php">Студенты</a></li>
-    <?php
-    if ($_SESSION['role'] == 'OPTS') {
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+    <div class="navbar-header">
+        <div class="navbar-brand">OPTS</div>
+    </div>
+    <ul class="navbar-nav">
+        <li class="navbar-item">
+            <a class="nav-link" href="StudentList.php">Студенты</a>
+        </li>
+        <?php
+        if($_SESSION['role'] == 'OPTS') {
+            ?>
+            <li class="navbar-item">
+                <a class="nav-link" href="CompaniesList.php">Компании</a>
+            </li>
+            <?php
+        }
         ?>
-        <li class="active"><a href="CompaniesList.php">Компании</a></li>
-    <?php } ?>
-    <li><a href="index.php">Выход</a></li>
-</ul>
+    </ul>
+    <ul class="navbar-nav navbar-right nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="index.php">Выход</a>
+        </li>
+    </ul>
+</nav>
 
 <?php
 session_start();
@@ -96,10 +66,12 @@ $id = $_GET["id"];
 $compName = $sql->query("SELECT * FROM opts.companies WHERE compID=$id")->fetch_assoc()["compName"];
 ?>
 
-<h1 style="text-align: center;">Контракты компании <?= $compName ?></h1>
-<button type="button" id="add-contract">Добавить контракт</button>
-<button type="button" id="<?=$id?>" class="delete-company" style="float: right; background-color: black; color: white">Удалить</button>
-<table class="amazing-big-table">
+<h4 style="text-align: center;">Контракты компании <?= $compName ?></h4>
+<span class="companyID" id="<?=$id?>" hidden></span>
+<button type="button" class="btn btn-secondary addContract" id="add-contract" style="float: right">Добавить контракт</button>
+<button type="button" id="<?=$id?>" class="deleteCompany btn btn-danger" style="float: right">Удалить компанию</button>
+<table class="table table-hover table-bordered">
+    <thead>
     <tr>
         <th>
             Номер
@@ -114,6 +86,8 @@ $compName = $sql->query("SELECT * FROM opts.companies WHERE compID=$id")->fetch_
         <th></th>
         <th></th>
     </tr>
+    </thead>
+    <tbody>
     <?php
     $contracts = $sql->query("SELECT contractID, contractNumber, dateOfContract, expirationDate FROM opts.contracts WHERE companyID=$id");
 
@@ -132,64 +106,114 @@ $compName = $sql->query("SELECT * FROM opts.companies WHERE compID=$id")->fetch_
                 <?= $row["expirationDate"] ?>
             </td>
             <td>
-                <a href="ContractView.php?id=<?=$cid?>">Приложения</a>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='ContractView.php?id=<?=$cid?>'">Приложения</button>
             </td>
             <td>
-                <button type="button" id="<?=$cid?>" class="edit-contract">Редактировать</button>
+                <button type="button" id="<?=$cid?>" class=" btn btn-secondary edit-contract">Редактировать</button>
             </td>
             <td>
-                <button type="button" id="<?=$cid . "/" . $id?>" class="delete-contract">Удалить</button>
+                <button type="button" id="<?=$cid . "/" . $id?>" class="btn btn-danger delete-contract">Удалить</button>
             </td>
         </tr>
         <?php
     }
     ?>
+    </tbody>
 </table>
 
-
-<!-- ОЧЕРЕДНАЯ УМОПОМРАЧИТЕЛЬНАЯ МОДАЛКА ДЛЯ ФАНАТОВ -->
-<div id="add-contract-modal" class="contract-modal">
-    <div class="contract-modal-content">
-        <span class="close">&times;</span>
-        <form id="add-contract-form">
-            <span class="compID" id="<?= $id ?>"></span>
-            <div class="inp-label">
-                Номер:
+<!-- Add Contract Modal -->
+<div class="modal fade" id="addContractModal" tabindex="-1" role="dialog" aria-labelledby="addContractModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addContractModalLabel">Добавить контракт</h5>
+                <button class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <input type="text" id="contractNumber" class="text-input" required>
-            <div class="inp-label">
-                Дата заключения:
+            <div class="modal-body">
+                <form id="addContractForm">
+                    <div class="form-group">
+                        <label for="contractNumberInput-a" class="col-form-label">Номер контракта:</label>
+                        <input type="text" class="form-control" id="contractNumberInput-a">
+                    </div>
+                    <div class="form-group">
+                        <label for="dateOfContractInput-a" class="col-form-label">Дата заключения:</label>
+                        <input type="date" class="form-control" id="dateOfContractInput-a">
+                    </div>
+                    <div class="form-group">
+                        <label for="expirationDateInput-a" class="col-form-label">Дата окончания:</label>
+                        <input type="date" class="form-control" id="expirationDateInput-a">
+                    </div>
+                </form>
+                <div class="w-100"></div>
+                <div class="alert alert-danger show col-sm-12 col-md-12" id="addErrorAlert" role="alert" style="display: none">
+                    <p id="addErrorAlertText"></p>
+                </div>
             </div>
-            <input type="date" id="dateOfContract" class="text-input" required>
-            <div class="inp-label">
-                Дата окончания:
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                <button type="button" class="btn" id="addContractSubmit">Добавить контракт</button>
             </div>
-            <input type="date" id="expirationDate" class="text-input" required>
-            <button type="button" id="add-contract-submit" class="modal-form-submit">Добавить</button>
-        </form>
+        </div>
     </div>
 </div>
 
-<!-- EDIT  CONTRACT   MODAL -->
-<div id="edit-contract-modal" class="contract-modal">
-    <div class="contract-modal-content">
-        <span class="close2">&times;</span>
-        <form id="edit-contract-form">
-            <span class="compID" id="<?= $id ?>"></span>
-            <div class="inp-label">
-                Номер:
+<!-- Edit Contract Modal -->
+<div class="modal fade" id="editContractModal" tabindex="-1" role="dialog" aria-labelledby="editContractModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editContractModalLabel">Редактировать контракт</h5>
+                <button class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <input type="text" id="e-contractNumber" class="text-input" required>
-            <div class="inp-label">
-                Дата заключения:
+            <div class="modal-body">
+                <form id="editContractForm">
+                    <div class="form-group">
+                        <label for="contractNumberInput-e" class="col-form-label">Номер контракта:</label>
+                        <input type="text" class="form-control" id="contractNumberInput-e">
+                    </div>
+                    <div class="form-group">
+                        <label for="dateOfContractInput-e" class="col-form-label">Дата заключения:</label>
+                        <input type="date" class="form-control" id="dateOfContractInput-e">
+                    </div>
+                    <div class="form-group">
+                        <label for="expirationDateInput-e" class="col-form-label">Дата окончания:</label>
+                        <input type="date" class="form-control" id="expirationDateInput-e">
+                    </div>
+                </form>
+                <div class="w-100"></div>
+                <div class="alert alert-danger show col-sm-12 col-md-12" id="editErrorAlert" role="alert" style="display: none">
+                    <p id="editErrorAlertText"></p>
+                </div>
             </div>
-            <input type="date" id="e-dateOfContract" class="text-input" required>
-            <div class="inp-label">
-                Дата окончания:
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                <button type="button" class="btn" id="editContractSubmit">Сохранить изменения</button>
             </div>
-            <input type="date" id="e-expirationDate" class="text-input" required>
-            <button type="button" id="edit-contract-submit" class="modal-form-submit">Сохранить</button>
-        </form>
+        </div>
     </div>
 </div>
+
+<div class="modal fade" id="deleteWarning" tabindex="-1" role="dialog" aria-labelledby="deleteWarningLabel">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteWarningLabel">Удаление компании</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-labelledby="Close">
+                    <span aria-hidden="true">&times</span></button>
+            </div>
+            <div class="modal-body">
+                <p id="warningDialogText"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                <button class="btn btn-danger" id="deleteConfirm">Удалить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>

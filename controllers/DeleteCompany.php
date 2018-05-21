@@ -9,7 +9,6 @@ $compID = $_POST['compID'];
 
 $sql = new mysqli('localhost', 'root', '');
 $sql->set_charset('utf-8');
-//$company = $sql->query("SELECT * FROM opts.companies WHERE compID=$compID")->fetch_assoc();
 
 $contractResult = $sql->query("SELECT * FROM opts.contracts WHERE companyID=$compID");
 if($contractResult->num_rows == 0) {

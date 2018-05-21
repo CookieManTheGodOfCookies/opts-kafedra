@@ -4,7 +4,7 @@ if(empty($_POST["contractID"])
     || empty($_POST["dateOfContract"])
     || empty($_POST["expirationDate"]))
 {
-    echo 'Fields empty!';
+    echo 'Empty';
     return;
 }
 
@@ -18,7 +18,7 @@ $sql->set_charset('utf8');
 $sql->query("UPDATE opts.contracts SET contractNumber=$contractNumber, dateOfContract='$dateOfContract', expirationDate='$expirationDate' WHERE contractID=$contractID");
 if($sql->errno)
 {
-    echo $sql->error;
+    echo 'Dublicate';
     return;
 }
 else echo 'OK';

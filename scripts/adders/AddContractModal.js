@@ -1,37 +1,39 @@
 $(document).ready(function () {
-    //console.log("Document ready.");
+    var cid = 0;
+    $('#addContractForm').keydown(function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            return false;
+        }
+    });
     $('#add-contract').click(function () {
-        $('#add-contract-modal').show();
-    });
+        cid = $('.companyID').attr('id');
+        $('#addContractModal').modal('show');
 
-    $('.close').click(function () {
-        $('#add-contract-modal').hide();
-    });
-
-    var compID = $('.compID').attr("id");
-    $('#add-contract-submit').click(function () {
-        var anUrl = 'controllers/AddContract.php';
-
-        $.ajax({
-            type : 'POST',
-            url : anUrl,
-            data : {
-                "compID" : compID,
-                "contractNumber" : $('#contractNumber').val(),
-                "dateOfContract" : $('#dateOfContract').val(),
-                "expirationDate" : $('#expirationDate').val()
-            },
-            success: function (reply) {
-                if(reply === 'OK')
-                {
-                    //console.log('Added shit.');
-                    location.reload();
+        $('#addContractSubmit').click(function () {
+            $.ajax({
+                type : 'POST',
+                url : 'controllers/AddContract.php',
+                data : {
+                    compID : cid,
+                    contractNumber : $('#contractNumberInput-a').val(),
+                    dateOfContract : $('#dateOfContractInput-a').val(),
+                    expirationDate : $('#expirationDateInput-a').val()
+                },
+                success : function (reply) {
+                    var addErrorAlert = $('#addErrorAlert');
+                    var addErrorAlertText = $('#addErrorAlertText');
+                    if(reply === 'OK') location.reload();
+                    else if (reply === 'Empty') {
+                        addErrorAlertText.text("Заполните все поля!");
+                        addErrorAlert.show('close');
+                    }
+                    else if (reply === 'Dublicate') {
+                        addErrorAlertText.text("Контракт с таким номером уже существует!");
+                        addErrorAlert.show('close')
+                    }
                 }
-                else
-                {
-                    alert("Неверные данные! Договор с таким номером уже существует.");
-                }
-            }
+            })
         });
     });
 });
