@@ -66,6 +66,13 @@ $id = $_GET["id"];
 $compName = $sql->query("SELECT * FROM opts.companies WHERE compID=$id")->fetch_assoc()["compName"];
 ?>
 
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="CompaniesList.php">Компании</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Контракты</li>
+    </ol>
+</nav>
+
 <h4 style="text-align: center;">Контракты компании <?= $compName ?></h4>
 <span class="companyID" id="<?=$id?>" hidden></span>
 <button type="button" class="btn btn-secondary addContract" id="add-contract" style="float: right">Добавить контракт</button>

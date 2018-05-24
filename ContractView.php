@@ -56,6 +56,14 @@ session_start();
     </ul>
 </nav>
 
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="CompaniesList.php">Компании</a></li>
+        <li class="breadcrumb-item"><a href="CompanyView.php?id=<?=$companyID?>">Контракты</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Приложения</li>
+    </ol>
+</nav>
+
 <h4 style="text-align: center">Компания: <?= $company["compName"] ?></h4>
 <h5 style="text-align: center">Контракт: <?= $contract["contractNumber"] ?></h5>
 

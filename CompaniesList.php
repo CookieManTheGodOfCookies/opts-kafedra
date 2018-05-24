@@ -66,6 +66,13 @@ if ($sql->connect_error) {
     $table = $sql->query($query);
 }
 ?>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Компании</li>
+    </ol>
+</nav>
+
 <button type="button" id="add-company" class="btn addCompany">Добавить</button>
 
 <table class="table table-bordered table-hover">

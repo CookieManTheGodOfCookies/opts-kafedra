@@ -66,6 +66,15 @@ $studentsOnPractice = $sql->query("SELECT * FROM opts.students WHERE practiceID=
 
 </nav>
 
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="CompaniesList.php">Компании</a></li>
+        <li class="breadcrumb-item"><a href="CompanyView.php?id=<?=$companyID?>">Контракты</a></li>
+        <li class="breadcrumb-item"><a href="ContractView.php?id=<?=$contractID?>">Приложения</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Студенты</li>
+    </ol>
+</nav>
+
 <h5 style="text-align: center">Компания: <?= $compName ?></h5>
 <h5 style="text-align: center">Контракт № <?= $contractNumber ?></h5>
 <h5 style="text-align: center">Приложение № <?= $annexNumber ?></h5>

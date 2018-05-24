@@ -48,6 +48,15 @@ if ($sql->connect_error) return;
 $sql->set_charset('utf8');
 $studentsWithoutPractice = $sql->query("SELECT * FROM opts.students WHERE practiceID IS NULL");
 ?>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="CompaniesList.php">Компании</a></li>
+        <li class="breadcrumb-item"><a href="CompanyView.php?id=<?=$companyID?>">Контракты</a></li>
+        <li class="breadcrumb-item"><a href="ContractView.php?id=<?=$contractID?>">Приложения</a></li>
+        <li class="breadcrumb-item"><a href="AnnexView.php?aid=<?=$aid?>">Студенты</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Прикрепление студента</li>
+    </ol>
+</nav>
 
 <table class="table table-bordered table-hover">
     <thead>

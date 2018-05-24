@@ -5,6 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/AddStudent.php" afterPath="$PROJECT_DIR$/AddStudent.php" />
       <change beforePath="$PROJECT_DIR$/AnnexView.php" afterPath="$PROJECT_DIR$/AnnexView.php" />
+      <change beforePath="$PROJECT_DIR$/CompaniesList.php" afterPath="$PROJECT_DIR$/CompaniesList.php" />
+      <change beforePath="$PROJECT_DIR$/CompanyView.php" afterPath="$PROJECT_DIR$/CompanyView.php" />
+      <change beforePath="$PROJECT_DIR$/ContractView.php" afterPath="$PROJECT_DIR$/ContractView.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,11 +62,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
+      <file leaf-file-name="AddContractModal.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/adders/AddContractModal.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeleteCompany.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/delete/DeleteCompany.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="92">
-              <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="14" selection-end-column="80" />
+              <caret line="4" column="135" lean-forward="false" selection-start-line="4" selection-start-column="135" selection-end-line="4" selection-end-column="135" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditCompanyModal.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/editors/EditCompanyModal.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="536">
+              <caret line="37" column="53" lean-forward="false" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -72,10 +95,23 @@
       <file leaf-file-name="CompaniesList.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CompaniesList.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1017">
-              <caret line="127" column="18" lean-forward="false" selection-start-line="124" selection-start-column="12" selection-end-line="127" selection-end-column="18" />
+            <state relative-caret-position="327">
+              <caret line="70" column="27" lean-forward="true" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
               <folding>
-                <marker date="1526746967869" expanded="true" signature="1849:1877" ph="SELECT * FRO... companies" />
+                <marker date="1527142967463" expanded="true" signature="1849:1877" ph="SELECT * FRO... companies" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompanyView.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CompanyView.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="71" column="41" lean-forward="false" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
+              <folding>
+                <marker date="1527143348467" expanded="true" signature="2030:2072" ph="SELECT * FRO... companies" />
+                <marker date="1527143348467" expanded="true" signature="3071:3173" ph="SELECT contr... contracts" />
               </folding>
             </state>
           </provider>
@@ -84,22 +120,23 @@
       <file leaf-file-name="ContractView.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ContractView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-598">
-              <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="20" selection-end-column="80" />
+            <state relative-caret-position="391">
+              <caret line="62" column="41" lean-forward="false" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
               <folding>
-                <element signature="n#style#0;n#button#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="e#4536#4543#1#HTML" expanded="true" />
-                <element signature="e#7444#7451#1#HTML" expanded="true" />
-                <marker date="1526884893541" expanded="true" signature="1498:1568" ph="SELECT contr... contracts" />
-                <marker date="1526884893541" expanded="true" signature="1683:1732" ph="SELECT compN... companies" />
-                <marker date="1526884893541" expanded="true" signature="1797:1902" ph="SELECT annex... annexes" />
-                <marker date="1526884893541" expanded="true" signature="3026:3073" ph="SELECT type practice_types" />
-                <marker date="1526884893541" expanded="true" signature="3575:3709" ph="..." />
-                <marker date="1526884893541" expanded="true" signature="3726:3913" ph="..." />
-                <marker date="1526884893541" expanded="true" signature="4110:6931" ph="..." />
-                <marker date="1526884893541" expanded="true" signature="5858:5891" ph="SELECT * FRO... practice_types" />
-                <marker date="1526884893541" expanded="true" signature="7084:9803" ph="..." />
-                <marker date="1526884893541" expanded="true" signature="8769:8802" ph="SELECT * FRO... practice_types" />
+                <marker date="1527143343539" expanded="true" signature="1498:1568" ph="SELECT contr... contracts" />
+                <marker date="1527143343539" expanded="true" signature="1683:1732" ph="SELECT compN... companies" />
+                <marker date="1527143343539" expanded="true" signature="1797:1902" ph="SELECT annex... annexes" />
+                <marker date="1527143343539" expanded="true" signature="2865:3178" ph="..." />
+                <marker date="1527143343539" expanded="true" signature="2874:3165" ph="..." />
+                <marker date="1527143343539" expanded="true" signature="2887:2930" ph="..." />
+                <marker date="1527143343539" expanded="true" signature="2943:2990" ph="..." />
+                <marker date="1527143343539" expanded="true" signature="3003:3049" ph="..." />
+                <marker date="1527143343539" expanded="true" signature="3062:3101" ph="..." />
+                <marker date="1527143343539" expanded="true" signature="3190:3309" ph="..." />
+                <marker date="1527143343539" expanded="true" signature="3363:3410" ph="SELECT type practice_types" />
+                <marker date="1527143343539" expanded="true" signature="3912:3942" ph="..." />
+                <marker date="1527143343539" expanded="true" signature="6195:6228" ph="SELECT * FRO... practice_types" />
+                <marker date="1527143343539" expanded="true" signature="9106:9139" ph="SELECT * FRO... practice_types" />
               </folding>
             </state>
           </provider>
@@ -108,14 +145,16 @@
       <file leaf-file-name="AnnexView.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AnnexView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="43" column="80" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="43" selection-end-column="80" />
+            <state relative-caret-position="213">
+              <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="75" selection-end-column="6" />
               <folding>
-                <element signature="n#style#0;n#button#0;n#body#0;n#!!top" expanded="true" />
-                <marker date="1526886204047" expanded="true" signature="337:400" ph="SELECT annex... annexes" />
-                <marker date="1526886204047" expanded="true" signature="527:597" ph="SELECT contr... contracts" />
-                <marker date="1526886204047" expanded="true" signature="743:792" ph="SELECT compN... companies" />
-                <marker date="1526886204047" expanded="true" signature="874:919" ph="SELECT * FRO... students" />
+                <marker date="1527143334238" expanded="true" signature="337:400" ph="SELECT annex... annexes" />
+                <marker date="1527143334238" expanded="true" signature="527:597" ph="SELECT contr... contracts" />
+                <marker date="1527143334238" expanded="true" signature="743:792" ph="SELECT compN... companies" />
+                <marker date="1527143334238" expanded="true" signature="874:919" ph="SELECT * FRO... students" />
+                <marker date="1527143334238" expanded="true" signature="3212:3394" ph="..." />
+                <marker date="1527143334238" expanded="true" signature="3221:3381" ph="..." />
+                <marker date="1527143334238" expanded="true" signature="3406:3549" ph="..." />
               </folding>
             </state>
           </provider>
@@ -124,66 +163,38 @@
       <file leaf-file-name="AddStudent.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AddStudent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-248">
-              <caret line="74" column="63" lean-forward="false" selection-start-line="74" selection-start-column="63" selection-end-line="74" selection-end-column="63" />
+            <state relative-caret-position="322">
+              <caret line="56" column="83" lean-forward="true" selection-start-line="56" selection-start-column="83" selection-end-line="56" selection-end-column="83" />
               <folding>
-                <marker date="1526886629249" expanded="true" signature="1602:1654" ph="SELECT * FRO... students" />
+                <marker date="1527143512892" expanded="true" signature="1602:1654" ph="SELECT * FRO... students" />
+                <marker date="1527143512892" expanded="true" signature="2263:2445" ph="..." />
+                <marker date="1527143512892" expanded="true" signature="2272:2432" ph="..." />
+                <marker date="1527143512892" expanded="true" signature="2457:2641" ph="..." />
+                <marker date="1527143512892" expanded="true" signature="2619:2641" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeleteAnnex.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/delete/DeleteAnnex.js">
+      <file leaf-file-name="GetCompanyDataById.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/GetCompanyDataById.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeleteAnnex.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/DeleteAnnex.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="322">
+              <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
               <folding>
-                <marker date="1526885153836" expanded="true" signature="184:242" ph="UPDATE opts.students... " />
-                <marker date="1526885153836" expanded="true" signature="267:306" ph="DELETE FROM opts.annexes... " />
+                <marker date="1525411846547" expanded="true" signature="193:235" ph="SELECT * FRO... companies" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddAnnexModal.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/adders/AddAnnexModal.js">
+      <file leaf-file-name="GetContractDataById.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/GetContractDataById.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="19" column="57" lean-forward="false" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddContractModal.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/adders/AddContractModal.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-184">
-              <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CompanyView.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CompanyView.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="218" column="0" lean-forward="true" selection-start-line="200" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
+            <state relative-caret-position="69">
+              <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
               <folding>
-                <marker date="1526884865533" expanded="true" signature="2030:2072" ph="SELECT * FRO... companies" />
-                <marker date="1526884865533" expanded="true" signature="2835:2937" ph="SELECT contr... contracts" />
+                <marker date="1525411846547" expanded="true" signature="205:251" ph="SELECT * FRO... contracts" />
               </folding>
             </state>
           </provider>
@@ -241,7 +252,6 @@
         <option value="$PROJECT_DIR$/scripts/adders/AddCompanyModal.js" />
         <option value="$PROJECT_DIR$/controllers/EditCompany.php" />
         <option value="$PROJECT_DIR$/scripts/editors/EditCompanyModal.js" />
-        <option value="$PROJECT_DIR$/CompaniesList.php" />
         <option value="$PROJECT_DIR$/controllers/AddContract.php" />
         <option value="$PROJECT_DIR$/controllers/EditContract.php" />
         <option value="$PROJECT_DIR$/scripts/editors/EditContractModal.js" />
@@ -254,11 +264,12 @@
         <option value="$PROJECT_DIR$/scripts/adders/AddAnnexModal.js" />
         <option value="$PROJECT_DIR$/controllers/EditAnnex.php" />
         <option value="$PROJECT_DIR$/scripts/editors/EditAnnexModal.js" />
-        <option value="$PROJECT_DIR$/CompanyView.php" />
-        <option value="$PROJECT_DIR$/ContractView.php" />
         <option value="$PROJECT_DIR$/controllers/DeleteAnnex.php" />
         <option value="$PROJECT_DIR$/scripts/delete/DeleteAnnex.js" />
+        <option value="$PROJECT_DIR$/CompaniesList.php" />
         <option value="$PROJECT_DIR$/AnnexView.php" />
+        <option value="$PROJECT_DIR$/ContractView.php" />
+        <option value="$PROJECT_DIR$/CompanyView.php" />
         <option value="$PROJECT_DIR$/AddStudent.php" />
       </list>
     </option>
@@ -317,7 +328,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -329,6 +339,16 @@
               <item name="opts-kafedra" type="b2602c69:ProjectViewProjectNode" />
               <item name="opts-kafedra" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="opts-kafedra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="opts-kafedra" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="opts-kafedra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="opts-kafedra" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="opts-kafedra" type="b2602c69:ProjectViewProjectNode" />
@@ -353,10 +373,16 @@
               <item name="scripts" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="editors" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="opts-kafedra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="opts-kafedra" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="stylesheets" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -433,7 +459,9 @@
       <workItem from="1526624028332" duration="4372000" />
       <workItem from="1526731205695" duration="9662000" />
       <workItem from="1526879007105" duration="255000" />
-      <workItem from="1526879284907" duration="5820000" />
+      <workItem from="1526879284907" duration="5862000" />
+      <workItem from="1526891153693" duration="213000" />
+      <workItem from="1527142733074" duration="792000" />
     </task>
     <task id="LOCAL-00001" summary="Added delete function for annexes.">
       <created>1525423419578</created>
@@ -505,11 +533,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526885493480</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="version 1.00000000002 re-styled">
+      <created>1526886720169</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1526886720169</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112680000" />
+    <option name="totallyTimeSpent" value="113727000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -534,7 +569,6 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19399707" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852563" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -545,6 +579,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852563" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852563" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -589,20 +624,14 @@
     <MESSAGE value="added warning dialogs to delete buttons, re-styled CompanyView page, fixed some" />
     <MESSAGE value="re-styled contract view page with bootstrap, re-styled modals" />
     <MESSAGE value="added prompt dialog for deleting annex" />
-    <option name="LAST_COMMIT_MESSAGE" value="added prompt dialog for deleting annex" />
+    <MESSAGE value="version 1.00000000002 re-styled" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 1.00000000002 re-styled" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/controllers/AttachStudent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="23" column="17" lean-forward="false" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../ISIT-labs/lab3/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1081">
@@ -677,13 +706,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/Authorisation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-207">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/StudentList.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-101">
@@ -698,13 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/AddCompany.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/adders/AddCompanyModal.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -712,17 +727,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/GetCompanyDataById.php">
+    <entry file="file://$PROJECT_DIR$/scripts/editors/EditContractModal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+        <state relative-caret-position="46">
+          <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="7" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/editors/EditCompanyModal.js">
+    <entry file="file://$PROJECT_DIR$/scripts/delete/DeleteContract.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="37" column="53" lean-forward="false" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
+        <state relative-caret-position="168">
+          <caret line="16" column="50" lean-forward="false" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="14" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/adders/AddAnnexModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="19" column="57" lean-forward="false" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/GetAnnexDataById.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/EditAnnex.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="22" column="20" lean-forward="false" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/editors/EditAnnexModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-115">
+          <caret line="2" column="40" lean-forward="false" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/delete/DeleteAnnex.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="23" lean-forward="false" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/AddAnnex.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="18" column="118" lean-forward="false" selection-start-line="18" selection-start-column="118" selection-end-line="18" selection-end-column="118" />
+          <folding>
+            <marker date="1526883288962" expanded="true" signature="511:578" ph="SELECT * FRO... practice_types" />
+            <marker date="1526883288962" expanded="true" signature="618:788" ph="INSERT INTO opts.annexes... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/AddCompany.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-133">
+          <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -730,44 +807,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
           <caret line="28" column="4" lean-forward="true" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/AttachStudent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="23" column="17" lean-forward="false" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/Authorisation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/DeleteAnnex.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
-            <marker date="1526749570018" expanded="true" signature="459:587" ph="INSERT INTO opts.contracts... " />
+            <marker date="1526885153836" expanded="true" signature="184:242" ph="UPDATE opts.students... " />
+            <marker date="1526885153836" expanded="true" signature="267:306" ph="DELETE FROM opts.annexes... " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/EditCompany.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="15" lean-forward="false" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/EditContract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding>
-            <marker date="1526750453463" expanded="true" signature="443:585" ph="UPDATE opts.contracts... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/GetContractDataById.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-          <folding>
-            <marker date="1525411846547" expanded="true" signature="205:251" ph="SELECT * FRO... contracts" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/editors/EditContractModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="7" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -788,14 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/delete/DeleteCompany.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="4" column="135" lean-forward="false" selection-start-line="4" selection-start-column="135" selection-end-line="4" selection-end-column="135" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/DeleteContract.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
@@ -810,161 +866,140 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/delete/DeleteContract.js">
+    <entry file="file://$PROJECT_DIR$/controllers/EditCompany.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="16" column="50" lean-forward="false" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
-          <folding />
+        <state relative-caret-position="115">
+          <caret line="5" column="15" lean-forward="false" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+          <folding>
+            <marker date="1526744387392" expanded="true" signature="320:408" ph="UPDATE opts.companies... " />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/controllers/EditContract.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="14" selection-end-column="80" />
-          <folding />
+        <state relative-caret-position="460">
+          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding>
+            <marker date="1526750453463" expanded="true" signature="443:585" ph="UPDATE opts.contracts... " />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/adders/AddContractModal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-184">
+        <state relative-caret-position="161">
           <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/AddAnnex.php">
+    <entry file="file://$PROJECT_DIR$/scripts/delete/DeleteCompany.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="18" column="118" lean-forward="false" selection-start-line="18" selection-start-column="118" selection-end-line="18" selection-end-column="118" />
-          <folding>
-            <marker date="1526883288962" expanded="true" signature="511:578" ph="SELECT * FRO... practice_types" />
-            <marker date="1526883288962" expanded="true" signature="618:788" ph="INSERT INTO opts.annexes... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/adders/AddAnnexModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="57" lean-forward="false" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+        <state relative-caret-position="92">
+          <caret line="4" column="135" lean-forward="false" selection-start-line="4" selection-start-column="135" selection-end-line="4" selection-end-column="135" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CompaniesList.php">
+    <entry file="file://$PROJECT_DIR$/controllers/GetCompanyDataById.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1017">
-          <caret line="127" column="18" lean-forward="false" selection-start-line="124" selection-start-column="12" selection-end-line="127" selection-end-column="18" />
+        <state relative-caret-position="322">
+          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
           <folding>
-            <marker date="1526746967869" expanded="true" signature="1849:1877" ph="SELECT * FRO... companies" />
+            <marker date="1525411846547" expanded="true" signature="193:235" ph="SELECT * FRO... companies" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/GetAnnexDataById.php">
+    <entry file="file://$PROJECT_DIR$/controllers/GetContractDataById.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
-          <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
           <folding>
-            <marker date="1525420396710" expanded="true" signature="195:236" ph="SELECT * FRO... annexes" />
-            <marker date="1525420396710" expanded="true" signature="333:380" ph="SELECT type practice_types" />
+            <marker date="1525411846547" expanded="true" signature="205:251" ph="SELECT * FRO... contracts" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/EditAnnex.php">
+    <entry file="file://$PROJECT_DIR$/scripts/editors/EditCompanyModal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="22" column="20" lean-forward="false" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-          <folding>
-            <marker date="1526884314108" expanded="true" signature="496:558" ph="SELECT pid F... practice_types" />
-            <marker date="1526884314108" expanded="true" signature="597:741" ph="UPDATE opts.annexes... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/editors/EditAnnexModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-115">
-          <caret line="2" column="40" lean-forward="false" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+        <state relative-caret-position="536">
+          <caret line="37" column="53" lean-forward="false" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CompanyView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="218" column="0" lean-forward="true" selection-start-line="200" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
+        <state relative-caret-position="328">
+          <caret line="71" column="41" lean-forward="false" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
           <folding>
-            <marker date="1526884865533" expanded="true" signature="2030:2072" ph="SELECT * FRO... companies" />
-            <marker date="1526884865533" expanded="true" signature="2835:2937" ph="SELECT contr... contracts" />
+            <marker date="1527143348467" expanded="true" signature="2030:2072" ph="SELECT * FRO... companies" />
+            <marker date="1527143348467" expanded="true" signature="3071:3173" ph="SELECT contr... contracts" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/DeleteAnnex.php">
+    <entry file="file://$PROJECT_DIR$/CompaniesList.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="327">
+          <caret line="70" column="27" lean-forward="true" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
           <folding>
-            <marker date="1526885153836" expanded="true" signature="184:242" ph="UPDATE opts.students... " />
-            <marker date="1526885153836" expanded="true" signature="267:306" ph="DELETE FROM opts.annexes... " />
+            <marker date="1527142967463" expanded="true" signature="1849:1877" ph="SELECT * FRO... companies" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/delete/DeleteAnnex.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ContractView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-598">
-          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="20" selection-end-column="80" />
+        <state relative-caret-position="391">
+          <caret line="62" column="41" lean-forward="false" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
           <folding>
-            <element signature="n#style#0;n#button#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="e#4536#4543#1#HTML" expanded="true" />
-            <element signature="e#7444#7451#1#HTML" expanded="true" />
-            <marker date="1526884893541" expanded="true" signature="1498:1568" ph="SELECT contr... contracts" />
-            <marker date="1526884893541" expanded="true" signature="1683:1732" ph="SELECT compN... companies" />
-            <marker date="1526884893541" expanded="true" signature="1797:1902" ph="SELECT annex... annexes" />
-            <marker date="1526884893541" expanded="true" signature="3026:3073" ph="SELECT type practice_types" />
-            <marker date="1526884893541" expanded="true" signature="3575:3709" ph="..." />
-            <marker date="1526884893541" expanded="true" signature="3726:3913" ph="..." />
-            <marker date="1526884893541" expanded="true" signature="4110:6931" ph="..." />
-            <marker date="1526884893541" expanded="true" signature="5858:5891" ph="SELECT * FRO... practice_types" />
-            <marker date="1526884893541" expanded="true" signature="7084:9803" ph="..." />
-            <marker date="1526884893541" expanded="true" signature="8769:8802" ph="SELECT * FRO... practice_types" />
+            <marker date="1527143343539" expanded="true" signature="1498:1568" ph="SELECT contr... contracts" />
+            <marker date="1527143343539" expanded="true" signature="1683:1732" ph="SELECT compN... companies" />
+            <marker date="1527143343539" expanded="true" signature="1797:1902" ph="SELECT annex... annexes" />
+            <marker date="1527143343539" expanded="true" signature="2865:3178" ph="..." />
+            <marker date="1527143343539" expanded="true" signature="2874:3165" ph="..." />
+            <marker date="1527143343539" expanded="true" signature="2887:2930" ph="..." />
+            <marker date="1527143343539" expanded="true" signature="2943:2990" ph="..." />
+            <marker date="1527143343539" expanded="true" signature="3003:3049" ph="..." />
+            <marker date="1527143343539" expanded="true" signature="3062:3101" ph="..." />
+            <marker date="1527143343539" expanded="true" signature="3190:3309" ph="..." />
+            <marker date="1527143343539" expanded="true" signature="3363:3410" ph="SELECT type practice_types" />
+            <marker date="1527143343539" expanded="true" signature="3912:3942" ph="..." />
+            <marker date="1527143343539" expanded="true" signature="6195:6228" ph="SELECT * FRO... practice_types" />
+            <marker date="1527143343539" expanded="true" signature="9106:9139" ph="SELECT * FRO... practice_types" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AnnexView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="43" column="80" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="43" selection-end-column="80" />
+        <state relative-caret-position="213">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="75" selection-end-column="6" />
           <folding>
-            <element signature="n#style#0;n#button#0;n#body#0;n#!!top" expanded="true" />
-            <marker date="1526886204047" expanded="true" signature="337:400" ph="SELECT annex... annexes" />
-            <marker date="1526886204047" expanded="true" signature="527:597" ph="SELECT contr... contracts" />
-            <marker date="1526886204047" expanded="true" signature="743:792" ph="SELECT compN... companies" />
-            <marker date="1526886204047" expanded="true" signature="874:919" ph="SELECT * FRO... students" />
+            <marker date="1527143334238" expanded="true" signature="337:400" ph="SELECT annex... annexes" />
+            <marker date="1527143334238" expanded="true" signature="527:597" ph="SELECT contr... contracts" />
+            <marker date="1527143334238" expanded="true" signature="743:792" ph="SELECT compN... companies" />
+            <marker date="1527143334238" expanded="true" signature="874:919" ph="SELECT * FRO... students" />
+            <marker date="1527143334238" expanded="true" signature="3212:3394" ph="..." />
+            <marker date="1527143334238" expanded="true" signature="3221:3381" ph="..." />
+            <marker date="1527143334238" expanded="true" signature="3406:3549" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AddStudent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-248">
-          <caret line="74" column="63" lean-forward="false" selection-start-line="74" selection-start-column="63" selection-end-line="74" selection-end-column="63" />
+        <state relative-caret-position="322">
+          <caret line="56" column="83" lean-forward="true" selection-start-line="56" selection-start-column="83" selection-end-line="56" selection-end-column="83" />
           <folding>
-            <marker date="1526886629249" expanded="true" signature="1602:1654" ph="SELECT * FRO... students" />
+            <marker date="1527143512892" expanded="true" signature="1602:1654" ph="SELECT * FRO... students" />
+            <marker date="1527143512892" expanded="true" signature="2263:2445" ph="..." />
+            <marker date="1527143512892" expanded="true" signature="2272:2432" ph="..." />
+            <marker date="1527143512892" expanded="true" signature="2457:2641" ph="..." />
+            <marker date="1527143512892" expanded="true" signature="2619:2641" ph="..." />
           </folding>
         </state>
       </provider>
