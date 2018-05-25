@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+include_once ('utils/test_input.php');
 session_start();
 if ($_SESSION['role'] == 'OPTS') {
     $sql = new mysqli('localhost', 'root', '');
@@ -10,7 +11,7 @@ if ($_SESSION['role'] == 'OPTS') {
     $sql->set_charset('utf8');
 } else return;
 if (empty($_GET["aid"])) return;
-$annexID = $_GET["aid"];
+$annexID = test_input($_GET["aid"]);
 $annex = $sql->query("SELECT annexNumber, contractID from opts.annexes WHERE annexID=$annexID")->fetch_assoc();
 $annexNumber = $annex["annexNumber"];
 $contractID = $annex["contractID"];

@@ -1,11 +1,12 @@
 <?php
+include_once ('../utils/test_input.php');
 if(empty($_POST['contractID']))
 {
     echo 'empty id!';
     return;
 }
 
-$contractID = $_POST['contractID'];
+$contractID = test_input($_POST['contractID']);
 $sql = new mysqli('localhost', 'root', '');
 $sql->set_charset('utf8');
 

@@ -40,8 +40,9 @@
 </nav>
 
 <?php
+include_once ('utils/test_input.php');
 if (empty($_GET["aid"])) return;
-$aid = $_GET["aid"];
+$aid = test_input($_GET["aid"]);
 
 $sql = new mysqli('localhost', 'root', '');
 if ($sql->connect_error) return;

@@ -1,4 +1,5 @@
 <?php
+include_once ('../utils/test_input.php');
 if(empty($_POST["annexNumber"])
     || empty($_POST["practiceStart"])
     || empty($_POST["practiceEnd"])
@@ -8,11 +9,11 @@ if(empty($_POST["annexNumber"])
     echo 'Empty';
     return;
 }
-$annexID = $_POST["annexID"];
-$annexNumber = $_POST["annexNumber"];
-$practiceStart = $_POST["practiceStart"];
-$practiceEnd = $_POST["practiceEnd"];
-$practiceType = $_POST["practiceType"];
+$annexID = test_input($_POST["annexID"]);
+$annexNumber = test_input($_POST["annexNumber"]);
+$practiceStart = test_input($_POST["practiceStart"]);
+$practiceEnd = test_input($_POST["practiceEnd"]);
+$practiceType = test_input($_POST["practiceType"]);
 
 $sql = new mysqli('localhost', 'root', '');
 $sql->set_charset('utf8');

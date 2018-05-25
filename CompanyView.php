@@ -2,6 +2,7 @@
 
 <?php
 session_start();
+include_once ('utils/test_input.php');
 ?>
 <head>
     <title>Контракты компании <?= $compName ?></title>
@@ -62,7 +63,7 @@ if ($sql->connect_error) {
     echo "SQL Connect error!";
     return;
 }
-$id = $_GET["id"];
+$id = test_input($_GET["id"]);
 $compName = $sql->query("SELECT * FROM opts.companies WHERE compID=$id")->fetch_assoc()["compName"];
 ?>
 

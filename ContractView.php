@@ -2,6 +2,7 @@
 
 <?php
 session_start();
+include_once ('utils/test_input.php');
 ?>
 <head>
     <title>
@@ -42,7 +43,7 @@ session_start();
                 return;
             }
             $sql->set_charset('utf8');
-            $contractID = $_GET['id'];
+            $contractID = test_input($_GET['id']);
             $contract = $sql->query("SELECT contractNumber, companyID FROM opts.contracts WHERE contractID=$contractID")->fetch_assoc();
             $companyID = $contract["companyID"];
             $company = $sql->query("SELECT compName FROM opts.companies WHERE compID=$companyID")->fetch_assoc();

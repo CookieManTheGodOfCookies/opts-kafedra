@@ -1,13 +1,13 @@
 <?php
-
+include_once ('../utils/test_input.php');
 if(empty($_POST['compName']) || empty($_POST['contactInfo']))
 {
     echo 'Empty';
     return;
 }
 
-$cName = $_POST['compName'];
-$cInfo = $_POST['contactInfo'];
+$cName = test_input($_POST['compName']);
+$cInfo = test_input($_POST['contactInfo']);
 
 $sql = new mysqli('localhost', 'root', '');
 $sql->set_charset('utf8');

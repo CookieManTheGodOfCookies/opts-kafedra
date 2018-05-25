@@ -1,11 +1,12 @@
 <?php
+include_once ('../utils/test_input.php');
 if(empty($_POST['compID']))
 {
     echo 'ID is empty!';
     return;
 }
 
-$compID = $_POST['compID'];
+$compID = test_input($_POST['compID']);
 
 $sql = new mysqli('localhost', 'root', '');
 $sql->set_charset('utf-8');

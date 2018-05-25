@@ -1,15 +1,15 @@
 <?php
-
+include_once  ('../utils/test_input.php');
 if(empty($_POST["contractNumber"]) || empty($_POST["expirationDate"]) || empty($_POST["dateOfContract"]) || empty($_POST["compID"]))
 {
     echo "Empty";
     return;
 }
 
-$cNumber = $_POST["contractNumber"];
-$eDate = $_POST["expirationDate"];
-$dOC = $_POST["dateOfContract"];
-$cID = $_POST["compID"];
+$cNumber = test_input($_POST["contractNumber"]);
+$eDate = test_input($_POST["expirationDate"]);
+$dOC = test_input($_POST["dateOfContract"]);
+$cID = test_input($_POST["compID"]);
 
 $sql = new mysqli('localhost', 'root', '');
 if($sql->connect_error)

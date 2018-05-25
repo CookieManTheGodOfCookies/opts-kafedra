@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
+include_once ('utils/test_input.php');
 ?>
 <html>
 <head>
