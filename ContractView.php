@@ -12,12 +12,12 @@ include_once ('utils/test_input.php');
     <!-- JQuery -->
     <script src="scripts/jquery-3.3.1.js"></script>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-reboot.css">
     <!-- Bootstrap JS -->
-    <script src="js/bootstrap.bundle.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="stylesheets/custom_styles.css">
     <script src="scripts/adders/AddAnnexModal.js"></script>
@@ -57,7 +57,8 @@ include_once ('utils/test_input.php');
     </ul>
 </nav>
 
-<nav aria-label="breadcrumb">
+<div class="container">
+<nav aria-label="breadcrumb" style="margin-top: 15px">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="CompaniesList.php">Компании</a></li>
         <li class="breadcrumb-item"><a href="CompanyView.php?id=<?=$companyID?>">Контракты</a></li>
@@ -68,7 +69,7 @@ include_once ('utils/test_input.php');
 <h4 style="text-align: center">Компания: <?= $company["compName"] ?></h4>
 <h5 style="text-align: center">Контракт: <?= $contract["contractNumber"] ?></h5>
 
-<button type="button" class="btn" style="float:right" id="add-annex">Добавить приложение</button>
+<button type="button" class="btn" style="float:right; margin-bottom: 15px" id="add-annex">Добавить приложение</button>
 <table class="table table-bordered table-hover">
     <thead>
     <tr>
@@ -84,8 +85,6 @@ include_once ('utils/test_input.php');
         <th>
             Тип практики
         </th>
-        <th></th>
-        <th></th>
         <th></th>
     </tr>
     </thead>
@@ -106,12 +105,8 @@ include_once ('utils/test_input.php');
                 <button type="button" class="btn btn-secondary" onclick="location.href='AnnexView.php?aid=<?= $aid ?>'">
                     Студенты
                 </button>
-            </td>
-            <td>
                 <button type="button" class=" btn btn-secondary edit-annex" id="<?= $aid ?>">Редактировать</button>
-            </td>
-            <td>
-                <button type="button" class="btn btn-secondary delete-annex" id="<?= $aid . "/" . $contractID ?>">
+                <button type="button" class="btn btn-danger delete-annex" id="<?= $aid . "/" . $contractID ?>">
                     Удалить
                 </button>
             </td>
@@ -249,5 +244,5 @@ include_once ('utils/test_input.php');
         </div>
     </div>
 </div>
-
+</div>
 </body>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<html>
 <?php
 session_start();
 include_once ('utils/test_input.php');
@@ -10,15 +10,15 @@ include_once ('utils/test_input.php');
     <!-- JQuery -->
     <script src="scripts/jquery-3.3.1.js"></script>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 
     <!-- Bootstrap JS -->
-    <script src="js/bootstrap.bundle.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="stylesheets/custom_styles.css">
     <!-- More JS -->
@@ -67,7 +67,8 @@ $id = test_input($_GET["id"]);
 $compName = $sql->query("SELECT * FROM opts.companies WHERE compID=$id")->fetch_assoc()["compName"];
 ?>
 
-<nav aria-label="breadcrumb">
+<div class="container">
+<nav aria-label="breadcrumb" style="margin-top: 15px;">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="CompaniesList.php">Компании</a></li>
         <li class="breadcrumb-item active" aria-current="page">Контракты</li>
@@ -91,8 +92,7 @@ $compName = $sql->query("SELECT * FROM opts.companies WHERE compID=$id")->fetch_
             Дата окончания
         </th>
         <th></th>
-        <th></th>
-        <th></th>
+
     </tr>
     </thead>
     <tbody>
@@ -115,11 +115,7 @@ $compName = $sql->query("SELECT * FROM opts.companies WHERE compID=$id")->fetch_
             </td>
             <td>
                 <button type="button" class="btn btn-secondary" onclick="window.location.href='ContractView.php?id=<?=$cid?>'">Приложения</button>
-            </td>
-            <td>
                 <button type="button" id="<?=$cid?>" class=" btn btn-secondary edit-contract">Редактировать</button>
-            </td>
-            <td>
                 <button type="button" id="<?=$cid . "/" . $id?>" class="btn btn-danger delete-contract">Удалить</button>
             </td>
         </tr>
@@ -224,5 +220,6 @@ $compName = $sql->query("SELECT * FROM opts.companies WHERE compID=$id")->fetch_
         </div>
     </div>
 </div>
-
+</div>
 </body>
+</html>

@@ -7,12 +7,12 @@
     <!-- JQuery -->
     <script src="scripts/jquery-3.3.1.js"></script>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-reboot.css">
     <!-- Bootstrap JS -->
-    <script src="js/bootstrap.bundle.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="stylesheets/custom_styles.css">
     <script src="scripts/jquery-3.3.1.js"></script>
@@ -40,7 +40,7 @@
 </nav>
 
 <?php
-include_once ('utils/test_input.php');
+include_once('utils/test_input.php');
 if (empty($_GET["aid"])) return;
 $aid = test_input($_GET["aid"]);
 
@@ -48,70 +48,77 @@ $sql = new mysqli('localhost', 'root', '');
 if ($sql->connect_error) return;
 $sql->set_charset('utf8');
 $studentsWithoutPractice = $sql->query("SELECT * FROM opts.students WHERE practiceID IS NULL");
-?>
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="CompaniesList.php">Компании</a></li>
-        <li class="breadcrumb-item"><a href="CompanyView.php?id=<?=$companyID?>">Контракты</a></li>
-        <li class="breadcrumb-item"><a href="ContractView.php?id=<?=$contractID?>">Приложения</a></li>
-        <li class="breadcrumb-item"><a href="AnnexView.php?aid=<?=$aid?>">Студенты</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Прикрепление студента</li>
-    </ol>
-</nav>
 
-<table class="table table-bordered table-hover">
-    <thead>
-    <tr>
-        <th>Имя</th>
-        <th>Фамилия</th>
-        <th>Отчество</th>
-        <th>Студенческий</th>
-        <th>Номер группы</th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <?php
-    for ($i = 0; $i < $studentsWithoutPractice->num_rows; $i++) {
-        $studentWP = $studentsWithoutPractice->fetch_assoc();
-        ?>
+$contractID = $sql->query("SELECT contractID FROM opts.annexes WHERE annexID=$aid")->fetch_assoc()["contractID"];
+$companyID = $sql->query("SELECT companyID FROM opts.contracts WHERE contractID=$contractID")->fetch_assoc()["companyID"];
+?>
+
+<div class="container">
+    <nav aria-label="breadcrumb" style="margin-top: 15px;">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="CompaniesList.php">Компании</a></li>
+            <li class="breadcrumb-item"><a href="CompanyView.php?id=<?= $companyID ?>">Контракты</a></li>
+            <li class="breadcrumb-item"><a href="ContractView.php?id=<?= $contractID ?>">Приложения</a></li>
+            <li class="breadcrumb-item"><a href="AnnexView.php?aid=<?= $aid ?>">Студенты</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Прикрепление студента</li>
+        </ol>
+    </nav>
+
+    <table class="table table-bordered table-hover">
+        <thead>
         <tr>
-            <td><?= $studentWP["name"] ?></td>
-            <td><?= $studentWP["surname"] ?></td>
-            <td><?= $studentWP["patronymic"] ?></td>
-            <td><?= $studentWP["IDNumber"] ?></td>
-            <td><?= $studentWP["groupNumber"] ?></td>
-            <td>
-                <button type="button" class="btn btn-secondary attach" id="<?= $studentWP["studentID"] ?>">Выбрать</button>
-            </td>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Отчество</th>
+            <th>Студенческий</th>
+            <th>Номер группы</th>
+            <th></th>
         </tr>
+        </thead>
+        <tbody>
         <?php
-    }
-    ?>
-    </tbody>
-    <script>
-        var aid = <?=$aid?>;
-        var anUrl = 'controllers/AttachStudent.php';
-        $(document).ready(function () {
-            $('.attach').click(function () {
-                $.ajax({
-                    type: 'POST',
-                    url: anUrl,
-                    data: {
-                        "studentID": $(this).attr('id'),
-                        "annexID": aid
-                    },
-                    success: function (reply) {
-                        if (reply === 'OK') {
-                            window.location.href = 'AnnexView.php?aid=' + aid;
+        for ($i = 0; $i < $studentsWithoutPractice->num_rows; $i++) {
+            $studentWP = $studentsWithoutPractice->fetch_assoc();
+            ?>
+            <tr>
+                <td><?= $studentWP["name"] ?></td>
+                <td><?= $studentWP["surname"] ?></td>
+                <td><?= $studentWP["patronymic"] ?></td>
+                <td><?= $studentWP["IDNumber"] ?></td>
+                <td><?= $studentWP["groupNumber"] ?></td>
+                <td>
+                    <button type="button" class="btn btn-secondary attach" id="<?= $studentWP["studentID"] ?>">Выбрать
+                    </button>
+                </td>
+            </tr>
+            <?php
+        }
+        ?>
+        </tbody>
+        <script>
+            var aid = <?=$aid?>;
+            var anUrl = 'controllers/AttachStudent.php';
+            $(document).ready(function () {
+                $('.attach').click(function () {
+                    $.ajax({
+                        type: 'POST',
+                        url: anUrl,
+                        data: {
+                            "studentID": $(this).attr('id'),
+                            "annexID": aid
+                        },
+                        success: function (reply) {
+                            if (reply === 'OK') {
+                                window.location.href = 'AnnexView.php?aid=' + aid;
+                            }
+                            else {
+                                console.log(reply);
+                            }
                         }
-                        else {
-                            console.log(reply);
-                        }
-                    }
+                    });
                 });
             });
-        });
-    </script>
-</table>
+        </script>
+    </table>
+</div>
 </body>

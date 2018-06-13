@@ -35,12 +35,12 @@ $studentsOnPractice = $sql->query("SELECT * FROM opts.students WHERE practiceID=
     <!-- JQuery -->
     <script src="scripts/jquery-3.3.1.js"></script>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-reboot.css">
     <!-- Bootstrap JS -->
-    <script src="js/bootstrap.bundle.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="stylesheets/custom_styles.css">
     <script src="scripts/RemoveStudent.js"></script>
@@ -67,7 +67,8 @@ $studentsOnPractice = $sql->query("SELECT * FROM opts.students WHERE practiceID=
 
 </nav>
 
-<nav aria-label="breadcrumb">
+<div class="container">
+<nav aria-label="breadcrumb" style="margin-top: 15px">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="CompaniesList.php">Компании</a></li>
         <li class="breadcrumb-item"><a href="CompanyView.php?id=<?=$companyID?>">Контракты</a></li>
@@ -81,7 +82,7 @@ $studentsOnPractice = $sql->query("SELECT * FROM opts.students WHERE practiceID=
 <h5 style="text-align: center">Приложение № <?= $annexNumber ?></h5>
 
 <h5 style="text-align: center">Список прикрепленных студентов</h5>
-<button type="button" class="btn" onclick="location.href='AddStudent.php?aid=<?=$annexID?>'" style="float: right">Добавить студента</button>
+<button type="button" class="btn" onclick="location.href='AddStudent.php?aid=<?=$annexID?>'" style="float: right; margin-bottom: 15px">Добавить студента</button>
 <table class="table table-bordered table-hover">
     <thead>
     <tr>
@@ -114,5 +115,5 @@ $studentsOnPractice = $sql->query("SELECT * FROM opts.students WHERE practiceID=
     ?>
     </tbody>
 </table>
-
+</div>
 </body>
