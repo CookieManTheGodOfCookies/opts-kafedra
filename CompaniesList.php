@@ -11,12 +11,10 @@ include_once('utils/test_input.php');
     <script src="scripts/jquery-3.3.1.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-grid.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.css">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 
     <!-- Bootstrap JS -->
-    <script src="bootstrap/js/bootstrap.bundle.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <!-- Custom CSS -->
@@ -29,29 +27,31 @@ include_once('utils/test_input.php');
 </head>
 <body>
 <!-- NAV -->
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
-    <div class="navbar-header">
-        <div class="navbar-brand">OPTS</div>
-    </div>
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="StudentList.php">Студенты</a>
-        </li>
-        <?php
-        if ($_SESSION['role'] == 'OPTS') {
-            ?>
-            <li class="nav-item active">
-                <a class="nav-link" href="CompaniesList.php">Компании</a>
+<nav class="navbar navbar-default sticky-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-brand">OPTS</div>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="StudentList.php">Студенты</a>
             </li>
             <?php
-        }
-        ?>
-    </ul>
-    <ul class="navbar-nav navbar-right nav ml-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="index.php">Выход</a>
-        </li>
-    </ul>
+            if ($_SESSION['role'] == 'OPTS') {
+                ?>
+                <li class="nav-item active">
+                    <a class="nav-link" href="CompaniesList.php">Компании</a>
+                </li>
+                <?php
+            }
+            ?>
+        </ul>
+        <ul class="nav navbar-nav navbar-right ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.php">Выход</a>
+            </li>
+        </ul>
+    </div>
 </nav>
 
 
@@ -96,9 +96,11 @@ if ($sql->connect_error) {
                 <td>
                     <button type="button" class="btn btn-secondary"
                             onclick="window.location.href='CompanyView.php?id=<?= $cid ?>'">
-                        Подробнее <span class="glyphicon glyphicon-plus"></span>
+                        <span class="glyphicon glyphicon-eye-open"></span>
                     </button>
-                    <button type="button" id="<?= $cid ?>" class="edit-company btn btn-secondary">Редактировать</button>
+                    <button type="button" id="<?= $cid ?>" class="edit-company btn btn-secondary">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </button>
                 </td>
             </tr>
         <?php }
@@ -112,7 +114,7 @@ if ($sql->connect_error) {
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="addCompanyModalLabel">Добавить компанию</h5>
+                    <h4 class="modal-title" id="addCompanyModalLabel">Добавить компанию</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
                 </div>
@@ -129,8 +131,7 @@ if ($sql->connect_error) {
                     </form>
                 </div>
                 <div class="w-100"></div>
-                <div class="alert alert-danger show col-sm-12 col-md-12" id="addErrorAlert" role="alert"
-                     style="display: none">
+                <div class="alert alert-danger fade in" id="addErrorAlert" role="alert" style="display: none;">
                     <p id="addErrorAlertText"></p>
                 </div>
                 <div class="modal-footer">
@@ -164,7 +165,7 @@ if ($sql->connect_error) {
                     </form>
                 </div>
                 <div class="w-100"></div>
-                <div class="alert alert-danger show col-sm-12 col-md-12" id="editErrorAlert" role="alert"
+                <div class="alert alert-danger fade in" id="editErrorAlert" role="alert"
                      style="display: none">
                     <p id="editErrorAlertText"></p>
                 </div>

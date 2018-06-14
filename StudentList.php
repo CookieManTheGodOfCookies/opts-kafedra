@@ -9,13 +9,13 @@ session_start();
     <script src="scripts/jquery-3.3.1.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-grid.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 
     <!-- Bootstrap JS -->
     <script src="bootstrap/js/bootstrap.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="stylesheets/custom_styles.css">
@@ -25,32 +25,32 @@ session_start();
 <body>
 
 <!-- there will be some NAV -->
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
-    <!-- Links -->
-    <div class="navbar-header">
-        <div class="navbar-brand">OPTS</div>
-    </div>
-    <ul class="navbar-nav">
-        <li class="nav-item active">
-            <a class="nav-link" href="StudentList.php">Студенты</a>
-        </li>
-        <?php
-        if ($_SESSION['role'] == 'OPTS') {
-            ?>
-            <li class="nav-item">
-                <a class="nav-link" href="CompaniesList.php">Компании</a>
+<nav class="navbar navbar-default sticky-top">
+    <div class="container-fluid">
+        <!-- Links -->
+        <div class="navbar-header">
+            <div class="navbar-brand">OPTS</div>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="StudentList.php">Студенты</a>
             </li>
             <?php
-        }
-        ?>
-    </ul>
-    <ul class="navbar-nav navbar-right nav ml-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="index.php">Выход</a>
-        </li>
-    </ul>
-
-
+            if ($_SESSION['role'] == 'OPTS') {
+                ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="CompaniesList.php">Компании</a>
+                </li>
+                <?php
+            }
+            ?>
+        </ul>
+        <ul class="nav navbar-nav navbar-right ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.php">Выход</a>
+            </li>
+        </ul>
+    </div>
 </nav>
 
 <div class="container">

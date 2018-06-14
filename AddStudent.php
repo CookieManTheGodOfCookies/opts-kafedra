@@ -8,10 +8,11 @@
     <script src="scripts/jquery-3.3.1.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-grid.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
     <!-- Bootstrap JS -->
-    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="stylesheets/custom_styles.css">
@@ -19,24 +20,25 @@
 </head>
 <body>
 <!-- NAV -->
-<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
-    <div class="navbar-header">
-        <div class="navbar-brand">
-            OPTS
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-brand">
+                OPTS
+            </div>
         </div>
+        <ul class="nav navbar-nav">
+            <li class="navbar-item"><a class="nav-link" href="StudentList.php">Студенты</a></li>
+            <?php
+            if ($_SESSION['role'] == 'OPTS') {
+                ?>
+                <li class="navbar-item"><a class="nav-link" href="CompaniesList.php">Компании</a></li>
+            <?php } else return; ?>
+        </ul>
+        <ul class="navbar-nav nav navbar-right ml-auto">
+            <li class="navbar-item"><a class="nav-link" href="index.php">Выход</a></li>
+        </ul>
     </div>
-    <ul class="navbar-nav">
-        <li class="navbar-item"><a class="nav-link" href="StudentList.php">Студенты</a></li>
-        <?php
-        if ($_SESSION['role'] == 'OPTS') {
-            ?>
-            <li class="navbar-item"><a class="nav-link" href="CompaniesList.php">Компании</a></li>
-        <?php } else return; ?>
-    </ul>
-    <ul class="navbar-nav nav navbar-right ml-auto">
-        <li class="navbar-item"><a class="nav-link" href="index.php">Выход</a></li>
-    </ul>
-
 </nav>
 
 <?php
@@ -87,7 +89,8 @@ $companyID = $sql->query("SELECT companyID FROM opts.contracts WHERE contractID=
                 <td><?= $studentWP["IDNumber"] ?></td>
                 <td><?= $studentWP["groupNumber"] ?></td>
                 <td>
-                    <button type="button" class="btn btn-secondary attach" id="<?= $studentWP["studentID"] ?>">Выбрать
+                    <button type="button" class="btn btn-secondary attach" id="<?= $studentWP["studentID"] ?>">
+                        <span class="glyphicon glyphicon-plus"></span>
                     </button>
                 </td>
             </tr>

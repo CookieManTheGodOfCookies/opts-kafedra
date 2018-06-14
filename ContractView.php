@@ -13,10 +13,11 @@ include_once ('utils/test_input.php');
     <script src="scripts/jquery-3.3.1.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-grid.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
     <!-- Bootstrap JS -->
-    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="stylesheets/custom_styles.css">
@@ -26,13 +27,14 @@ include_once ('utils/test_input.php');
 
 </head>
 <body>
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
     <div class="navbar-header">
         <div class="navbar-brand">
             OPTS
         </div>
     </div>
-    <ul class="navbar-nav">
+    <ul class="nav navbar-nav">
         <li class="navbar-item"><a class="nav-link" href="StudentList.php">Студенты</a></li>
         <?php
         if ($_SESSION['role'] == 'OPTS') {
@@ -55,6 +57,7 @@ include_once ('utils/test_input.php');
     <ul class="navbar-nav nav navbar-right ml-auto">
         <li class="navbar-item"><a class="nav-link" href="index.php">Выход</a></li>
     </ul>
+    </div>
 </nav>
 
 <div class="container">
@@ -103,11 +106,13 @@ include_once ('utils/test_input.php');
             <td><?= $ptype ?></td>
             <td>
                 <button type="button" class="btn btn-secondary" onclick="location.href='AnnexView.php?aid=<?= $aid ?>'">
-                    Студенты
+                    <span class="glyphicon glyphicon-eye-open"></span>
                 </button>
-                <button type="button" class=" btn btn-secondary edit-annex" id="<?= $aid ?>">Редактировать</button>
+                <button type="button" class=" btn btn-secondary edit-annex" id="<?= $aid ?>">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </button>
                 <button type="button" class="btn btn-danger delete-annex" id="<?= $aid . "/" . $contractID ?>">
-                    Удалить
+                    <span class="glyphicon glyphicon-trash"></span>
                 </button>
             </td>
         </tr>
@@ -159,7 +164,7 @@ include_once ('utils/test_input.php');
                     </div>
                 </form>
                 <div class="w-100"></div>
-                <div class="alert alert-danger show col-sm-12 col-md-12" id="addErrorAlert" role="alert"
+                <div class="alert alert-danger fade in" id="addErrorAlert" role="alert"
                      style="display: none">
                     <p id="addErrorAlertText"></p>
                 </div>
@@ -214,7 +219,7 @@ include_once ('utils/test_input.php');
                 </form>
             </div>
             <div class="w-100"></div>
-            <div class="alert alert-danger show col-sm-12 col-md-12" id="editErrorAlert" role="alert" style="display: none">
+            <div class="alert alert-danger fade in" id="editErrorAlert" role="alert" style="display: none">
                 <p id="editErrorAlertText"></p>
             </div>
             <div class="modal-footer">

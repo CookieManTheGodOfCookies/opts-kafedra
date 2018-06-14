@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-include_once ('utils/test_input.php');
+include_once('utils/test_input.php');
 session_start();
 if ($_SESSION['role'] == 'OPTS') {
     $sql = new mysqli('localhost', 'root', '');
@@ -36,84 +36,90 @@ $studentsOnPractice = $sql->query("SELECT * FROM opts.students WHERE practiceID=
     <script src="scripts/jquery-3.3.1.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-grid.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.css">
     <!-- Bootstrap JS -->
-    <script src="bootstrap/js/bootstrap.bundle.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="stylesheets/custom_styles.css">
     <script src="scripts/RemoveStudent.js"></script>
 </head>
 <body>
 <!-- NAV -->
-<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
-    <div class="navbar-header">
-        <div class="navbar-brand">
-            OPTS
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-brand">
+                OPTS
+            </div>
         </div>
+        <ul class="nav navbar-nav">
+            <li class="navbar-item"><a class="nav-link" href="StudentList.php">Студенты</a></li>
+            <?php
+            if ($_SESSION['role'] == 'OPTS') {
+                ?>
+                <li class="navbar-item"><a class="nav-link" href="CompaniesList.php">Компании</a></li>
+            <?php } ?>
+        </ul>
+        <ul class="navbar-nav nav navbar-right ml-auto">
+            <li class="navbar-item"><a class="nav-link" href="index.php">Выход</a></li>
+        </ul>
     </div>
-    <ul class="navbar-nav">
-        <li class="navbar-item"><a class="nav-link" href="StudentList.php">Студенты</a></li>
-        <?php
-        if ($_SESSION['role'] == 'OPTS') {
-            ?>
-            <li class="navbar-item"><a class="nav-link" href="CompaniesList.php">Компании</a></li>
-        <?php } ?>
-    </ul>
-    <ul class="navbar-nav nav navbar-right ml-auto">
-        <li class="navbar-item"><a class="nav-link" href="index.php">Выход</a></li>
-    </ul>
-
 </nav>
 
 <div class="container">
-<nav aria-label="breadcrumb" style="margin-top: 15px">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="CompaniesList.php">Компании</a></li>
-        <li class="breadcrumb-item"><a href="CompanyView.php?id=<?=$companyID?>">Контракты</a></li>
-        <li class="breadcrumb-item"><a href="ContractView.php?id=<?=$contractID?>">Приложения</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Студенты</li>
-    </ol>
-</nav>
+    <nav aria-label="breadcrumb" style="margin-top: 15px">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="CompaniesList.php">Компании</a></li>
+            <li class="breadcrumb-item"><a href="CompanyView.php?id=<?= $companyID ?>">Контракты</a></li>
+            <li class="breadcrumb-item"><a href="ContractView.php?id=<?= $contractID ?>">Приложения</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Студенты</li>
+        </ol>
+    </nav>
 
-<h5 style="text-align: center">Компания: <?= $compName ?></h5>
-<h5 style="text-align: center">Контракт № <?= $contractNumber ?></h5>
-<h5 style="text-align: center">Приложение № <?= $annexNumber ?></h5>
+    <h5 style="text-align: center">Компания: <?= $compName ?></h5>
+    <h5 style="text-align: center">Контракт № <?= $contractNumber ?></h5>
+    <h5 style="text-align: center">Приложение № <?= $annexNumber ?></h5>
 
-<h5 style="text-align: center">Список прикрепленных студентов</h5>
-<button type="button" class="btn" onclick="location.href='AddStudent.php?aid=<?=$annexID?>'" style="float: right; margin-bottom: 15px">Добавить студента</button>
-<table class="table table-bordered table-hover">
-    <thead>
-    <tr>
-        <th>Имя</th>
-        <th>Фамилия</th>
-        <th>Отчество</th>
-        <th>Студенческий</th>
-        <th>Номер группы</th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <?php
-    for ($i = 0; $i < $studentsOnPractice->num_rows; $i++) {
-        $student = $studentsOnPractice->fetch_assoc();
-        $sid = $student["studentID"];
-        ?>
+    <h5 style="text-align: center">Список прикрепленных студентов</h5>
+    <button type="button" class="btn" onclick="location.href='AddStudent.php?aid=<?= $annexID ?>'"
+            style="float: right; margin-bottom: 15px">Добавить студента
+    </button>
+    <table class="table table-bordered table-hover">
+        <thead>
         <tr>
-            <td><?= $student["name"] ?></td>
-            <td><?= $student["surname"] ?></td>
-            <td><?= $student["patronymic"] ?></td>
-            <td><?= $student["IDNumber"] ?></td>
-            <td><?= $student["groupNumber"] ?></td>
-            <td>
-                <button type="button" class="btn btn-danger remove-student" id="<?=$sid?>">Открепить</button>
-            </td>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Отчество</th>
+            <th>Студенческий</th>
+            <th>Номер группы</th>
+            <th></th>
         </tr>
+        </thead>
+        <tbody>
         <?php
-    }
-    ?>
-    </tbody>
-</table>
+        for ($i = 0; $i < $studentsOnPractice->num_rows; $i++) {
+            $student = $studentsOnPractice->fetch_assoc();
+            $sid = $student["studentID"];
+            ?>
+            <tr>
+                <td><?= $student["name"] ?></td>
+                <td><?= $student["surname"] ?></td>
+                <td><?= $student["patronymic"] ?></td>
+                <td><?= $student["IDNumber"] ?></td>
+                <td><?= $student["groupNumber"] ?></td>
+                <td>
+                    <button type="button" class="btn btn-danger remove-student" id="<?= $sid ?>">
+                        <span class="glyphicon glyphicon-minus"></span>
+                    </button>
+                </td>
+            </tr>
+            <?php
+        }
+        ?>
+        </tbody>
+    </table>
 </div>
 </body>
