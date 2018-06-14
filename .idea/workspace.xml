@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8fb34330-eb65-416e-a4a8-a5838a18e6a6" name="Default" comment="re-styled icons with glyphicons, fixed some bootstrap crap">
+    <list default="true" id="8fb34330-eb65-416e-a4a8-a5838a18e6a6" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap-theme.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap-theme.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap-theme.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap-theme.min.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap.min.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/fonts/glyphicons-halflings-regular.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/fonts/glyphicons-halflings-regular.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/fonts/glyphicons-halflings-regular.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/js/bootstrap.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/js/bootstrap.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/bootstrap/js/npm.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/AddStudent.php" afterPath="$PROJECT_DIR$/AddStudent.php" />
-      <change beforePath="$PROJECT_DIR$/AnnexView.php" afterPath="$PROJECT_DIR$/AnnexView.php" />
-      <change beforePath="$PROJECT_DIR$/CompaniesList.php" afterPath="$PROJECT_DIR$/CompaniesList.php" />
-      <change beforePath="$PROJECT_DIR$/CompanyView.php" afterPath="$PROJECT_DIR$/CompanyView.php" />
-      <change beforePath="$PROJECT_DIR$/ContractView.php" afterPath="$PROJECT_DIR$/ContractView.php" />
-      <change beforePath="$PROJECT_DIR$/StudentList.php" afterPath="$PROJECT_DIR$/StudentList.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -147,8 +157,8 @@
       <file leaf-file-name="AnnexView.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AnnexView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="35" column="51" lean-forward="false" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
+            <state relative-caret-position="278">
+              <caret line="54" column="20" lean-forward="true" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
               <folding>
                 <marker date="1528956992213" expanded="true" signature="387:450" ph="SELECT annex... annexes" />
                 <marker date="1528956992213" expanded="true" signature="577:647" ph="SELECT contr... contracts" />
@@ -463,7 +473,7 @@
       <workItem from="1528800230348" duration="55000" />
       <workItem from="1528800316581" duration="29000" />
       <workItem from="1528841011622" duration="6279000" />
-      <workItem from="1528950593776" duration="2391000" />
+      <workItem from="1528950593776" duration="2506000" />
     </task>
     <task id="LOCAL-00001" summary="Added delete function for annexes.">
       <created>1525423419578</created>
@@ -563,11 +573,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528895723324</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="re-styled icons with glyphicons, fixed some bootstrap crap">
+      <created>1528957000735</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1528957000735</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126775000" />
+    <option name="totallyTimeSpent" value="126890000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -953,8 +970,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AnnexView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="35" column="51" lean-forward="false" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
+        <state relative-caret-position="278">
+          <caret line="54" column="20" lean-forward="true" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
           <folding>
             <marker date="1528956992213" expanded="true" signature="387:450" ph="SELECT annex... annexes" />
             <marker date="1528956992213" expanded="true" signature="577:647" ph="SELECT contr... contracts" />
