@@ -5,12 +5,12 @@
     <!-- JQuery -->
     <script src="scripts/jquery-3.3.1.js"></script>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
     <!-- Bootstrap JS -->
-    <script src="js/bootstrap.bundle.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="stylesheets/custom_styles.css">
     <title>Авторизация</title>
@@ -19,8 +19,9 @@
 
 
 <div class="container">
-    <div class="row justify-content-md-center">
-        <div class="col-sm-6 col-md-4 col-xs-12" style="margin-top: 130px">
+    <div class="row ">
+        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+        <div class="col-lg-4 col-md-4 col-sm-4" style="margin-top: 130px;">
 
             <div class="col-sm-12 col-md-12 col-xs-12 auth-form-container">
                 <form id="auth-form" method="post">
@@ -36,10 +37,12 @@
                 </form>
             </div>
             <div class="w-100"></div>
-            <div class="alert alert-danger show col-sm-12 col-md-12" id="dangerAlert" role="alert" style="display: none">Неверные данные!
+            <div class="alert alert-danger fade in col-sm-12 col-md-12" id="dangerAlert" role="alert"
+                 style="display: none;">Неверные данные!
             </div>
         </div>
     </div>
+
 </div>
 <script src="scripts/Authorisation.js"></script>
 </body>
