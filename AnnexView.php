@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+include_once('utils/test_input.php');
 session_start();
 if ($_SESSION['role'] == 'OPTS') {
     $sql = new mysqli('localhost', 'root', '');
@@ -10,7 +11,7 @@ if ($_SESSION['role'] == 'OPTS') {
     $sql->set_charset('utf8');
 } else return;
 if (empty($_GET["aid"])) return;
-$annexID = $_GET["aid"];
+$annexID = test_input($_GET["aid"]);
 $annex = $sql->query("SELECT annexNumber, contractID from opts.annexes WHERE annexID=$annexID")->fetch_assoc();
 $annexNumber = $annex["annexNumber"];
 $contractID = $annex["contractID"];
@@ -31,64 +32,94 @@ $studentsOnPractice = $sql->query("SELECT * FROM opts.students WHERE practiceID=
     <title>
         Приложение № <?= $annexNumber ?>
     </title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/MainStyle.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/Navchik.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/AmazingBigTable.css">
+    <!-- JQuery -->
     <script src="scripts/jquery-3.3.1.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.css">
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/custom_styles.css">
     <script src="scripts/RemoveStudent.js"></script>
-    <style>
-        #attach-student {
-            float: right;
-            background-color: black;
-            color: white;
-        }
-    </style>
 </head>
 <body>
 <!-- NAV -->
-<ul class="nav">
-    <li><a href="StudentList.php">Студенты</a></li>
-    <?php
-    if ($_SESSION['role'] == 'OPTS') {
-        ?>
-        <li><a href="CompaniesList.php">Компании</a></li>
-    <?php } ?>
-    <li><a href="index.php">Выход</a></li>
-</ul>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-brand">
+                OPTS
+            </div>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="navbar-item"><a class="nav-link" href="StudentList.php">Студенты</a></li>
+            <?php
+            if ($_SESSION['role'] == 'OPTS') {
+                ?>
+                <li class="navbar-item"><a class="nav-link" href="CompaniesList.php">Компании</a></li>
+            <?php } ?>
+        </ul>
+        <ul class="navbar-nav nav navbar-right ml-auto">
+            <li class="navbar-item"><a class="nav-link" href="index.php">Выход</a></li>
+        </ul>
+    </div>
+</nav>
 
-<h2 style="text-align: center">Компания: <?= $compName ?></h2>
-<h2 style="text-align: center">Контракт № <?= $contractNumber ?></h2>
-<h2 style="text-align: center">Приложение № <?= $annexNumber ?></h2>
+<div class="container">
+    <nav aria-label="breadcrumb" style="margin-top: 15px">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="CompaniesList.php">Компании</a></li>
+            <li class="breadcrumb-item"><a href="CompanyView.php?id=<?= $companyID ?>">Контракты</a></li>
+            <li class="breadcrumb-item"><a href="ContractView.php?id=<?= $contractID ?>">Приложения</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Студенты</li>
+        </ol>
+    </nav>
 
-<h1 style="text-align: center">Список прикрепленных студентов</h1>
-<a href="AddStudent.php?aid=<?=$annexID?>" id="attach-student">Добавить студента</a>
-<table class="amazing-big-table">
-    <tr>
-        <th>Имя</th>
-        <th>Фамилия</th>
-        <th>Отчество</th>
-        <th>Студенческий</th>
-        <th>Номер группы</th>
-        <th></th>
-    </tr>
-    <?php
-    for ($i = 0; $i < $studentsOnPractice->num_rows; $i++) {
-        $student = $studentsOnPractice->fetch_assoc();
-        $sid = $student["studentID"];
-        ?>
+    <h5 style="text-align: center">Компания: <?= $compName ?></h5>
+    <h5 style="text-align: center">Контракт № <?= $contractNumber ?></h5>
+    <h5 style="text-align: center">Приложение № <?= $annexNumber ?></h5>
+
+    <h5 style="text-align: center">Список прикрепленных студентов</h5>
+    <button type="button" class="btn" onclick="location.href='AddStudent.php?aid=<?= $annexID ?>'"
+            style="float: right; margin-bottom: 15px">Добавить студента
+    </button>
+    <table class="table table-bordered table-hover">
+        <thead>
         <tr>
-            <td><?= $student["name"] ?></td>
-            <td><?= $student["surname"] ?></td>
-            <td><?= $student["patronymic"] ?></td>
-            <td><?= $student["IDNumber"] ?></td>
-            <td><?= $student["groupNumber"] ?></td>
-            <td>
-                <button type="button" class="remove-student" id="<?=$sid?>">Открепить</button>
-            </td>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Отчество</th>
+            <th>Студенческий</th>
+            <th>Номер группы</th>
+            <th></th>
         </tr>
+        </thead>
+        <tbody>
         <?php
-    }
-    ?>
-</table>
-
+        for ($i = 0; $i < $studentsOnPractice->num_rows; $i++) {
+            $student = $studentsOnPractice->fetch_assoc();
+            $sid = $student["studentID"];
+            ?>
+            <tr>
+                <td><?= $student["name"] ?></td>
+                <td><?= $student["surname"] ?></td>
+                <td><?= $student["patronymic"] ?></td>
+                <td><?= $student["IDNumber"] ?></td>
+                <td><?= $student["groupNumber"] ?></td>
+                <td>
+                    <button type="button" class="btn btn-danger remove-student" id="<?= $sid ?>">
+                        <span class="glyphicon glyphicon-minus"></span>
+                    </button>
+                </td>
+            </tr>
+            <?php
+        }
+        ?>
+        </tbody>
+    </table>
+</div>
 </body>

@@ -1,4 +1,5 @@
 <?php
+include_once ('../utils/test_input.php');
 $sql = new mysqli('localhost', 'root', '');
 if($sql->connect_error)
 {
@@ -12,8 +13,8 @@ if(empty($_POST["annexID"]) || empty($_POST["studentID"]))
     return;
 }
 
-$annexID = $_POST["annexID"];
-$studentID = $_POST["studentID"];
+$annexID = test_input($_POST["annexID"]);
+$studentID = test_input($_POST["studentID"]);
 
 $sql->query("UPDATE opts.students SET practiceID=$annexID WHERE studentID=$studentID");
 if($sql->errno)

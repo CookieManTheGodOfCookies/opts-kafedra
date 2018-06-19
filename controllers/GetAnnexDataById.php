@@ -1,4 +1,5 @@
 <?php
+include_once ('../utils/test_input.php');
 if(empty($_POST["annexID"]))
 {
     echo 'error';
@@ -7,7 +8,7 @@ if(empty($_POST["annexID"]))
 
 $sql = new mysqli('localhost', 'root', '');
 $sql->set_charset('utf8');
-$annexID = $_POST["annexID"];
+$annexID = test_input($_POST["annexID"]);
 
 $result = $sql->query("SELECT * FROM opts.annexes WHERE annexID=$annexID");
 $annex = $result->fetch_assoc();

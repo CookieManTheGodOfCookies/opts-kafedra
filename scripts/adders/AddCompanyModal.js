@@ -1,27 +1,30 @@
 $(document).ready(function () {
-    //console.log("Document ready.");
-    $('#add-company').click(function () {
-        $('#add-company-modal').toggle();
-    });
-
-    $('#close').click(function () {
-        $('#add-company-modal').hide()
+    $('.addCompany').click(function () {
+        $('#addCompanyModal').modal('show');
     });
 
     $('#add-company-submit').click(function () {
-        var anUrl = 'controllers/AddCompany.php';
         $.ajax({
-            type: 'POST',
-            url: anUrl,
-            data: $('#add-company-form').serialize(),
-            success: function (reply) {
-                if(reply === 'OK') {
-                    //window.alert('OK');
-                    location.reload();
-                } else {
-                    alert("Неверные данные! Проверьте, нет ли компании с таким же названием.");
+            type : 'POST',
+            url : 'controllers/AddCompany.php',
+            data : {
+                compName : $('#companyNameInput-a').val(),
+                contactInfo : $('#contactInfoInput-a').val()
+            },
+            success : function (reply) {
+                var errorAlert = $('#addErrorAlert');
+                var errorAlertText = $('#addErrorAlertText');
+                console.log(errorAlertText);
+                if(reply === 'OK') location.reload();
+                else if (reply === 'Empty') {
+                    errorAlertText.text("Заполните все поля!");
+                    errorAlert.show('close');
                 }
-        }}
-        );
-    })
+                else if (reply === 'Dublicate data') {
+                    errorAlertText.text("Компания с таким названием уже существует!");
+                    errorAlert.show('close');
+                }
+            }
+        });
+    });
 });

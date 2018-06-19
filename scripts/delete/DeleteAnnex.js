@@ -4,17 +4,19 @@ $(document).ready(function () {
     $('.delete-annex').click(function () {
         annexID = $(this).attr('id').split("/")[0];
         contractID = $(this).attr('id').split("/")[1];
-        if(confirm("Вы действительно хотите удалить приложение?\n Все студенты автоматически открепятся!")) {
+        $('#warningDialogText').text("Вы действительно хотите удалить приложение?");
+        $('#deleteWarning').modal('show');
+        $('#deleteConfirm').click(function () {
             $.ajax({
-                type: 'POST',
-                url: 'controllers/DeleteAnnex.php',
-                data: {annexID: annexID},
-                success: function (reply) {
-                    if (reply === 'OK') window.location.href = "ContractView.php?id=" + contractID;
-                    else
-                        console.log(reply);
+                type : 'POST',
+                url : 'controllers/DeleteAnnex.php',
+                data : {
+                    annexID : annexID
+                },
+                success : function (reply) {
+                    if(reply === 'OK') location.reload();
                 }
             });
-        }
+        });
     });
 });

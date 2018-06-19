@@ -2,111 +2,79 @@
 
 <?php
 session_start();
+include_once ('utils/test_input.php');
 ?>
 <head>
     <title>
-
+        Контракт
     </title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="stylesheets/MainStyle.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/Navchik.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/AmazingBigTable.css">
+    <!-- JQuery -->
     <script src="scripts/jquery-3.3.1.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/custom_styles.css">
     <script src="scripts/adders/AddAnnexModal.js"></script>
     <script src="scripts/editors/EditAnnexModal.js"></script>
     <script src="scripts/delete/DeleteAnnex.js"></script>
-    <style>
-        #add-annex {
-            background-color: black;
-            color: white;
-            float: right;
-        }
 
-        .annex-modal {
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            position: absolute;
-            background-color: rgba(0, 0, 0, 0.4);
-            display: none;
-        }
-
-        .annex-modal-content {
-            width: 40%;
-            margin: 15% auto;
-            height: auto;
-            border: 1px solid black;
-            padding: 14px;
-            background-color: white;
-        }
-
-        .close, .close2 {
-            font-size: 18px;
-            font-weight: bold;
-            float: right;
-            color: rgba(0, 0, 0, 0.4)
-        }
-
-        .close:hover, .close2:hover {
-            cursor: pointer;
-            color: black;
-        }
-
-        .modal-form-submit {
-            color: white;
-            background-color: black;
-            width: 100%;
-        }
-
-        .inp-label {
-            width: 100%;
-            margin-bottom: 5px;
-        }
-
-        .text-input {
-            line-height: 30px;
-            width: 100%;
-            margin-bottom: 5px;
-        }
-    </style>
-    <script>
-        $(document).ready(function () {
-            $('.showAnnexInfo').click(function () {
-                window.location.href = 'http://localhost/opts-kafedra/AnnexView.php?aid=' + $(this).attr('id');
-            });
-        });
-    </script>
 </head>
 <body>
-<ul class="nav">
-    <li><a href="StudentList.php">Студенты</a></li>
-    <?php
-    if ($_SESSION['role'] == 'OPTS') {
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+    <div class="navbar-header">
+        <div class="navbar-brand">
+            OPTS
+        </div>
+    </div>
+    <ul class="nav navbar-nav">
+        <li class="navbar-item"><a class="nav-link" href="StudentList.php">Студенты</a></li>
+        <?php
+        if ($_SESSION['role'] == 'OPTS') {
 
-        $sql = new mysqli('localhost', 'root', '');
-        if ($sql->connect_error) {
-            echo 'SQL Connect error!!';
-            return;
-        }
-        $sql->set_charset('utf8');
-        $contractID = $_GET['id'];
-        $contract = $sql->query("SELECT contractNumber, companyID FROM opts.contracts WHERE contractID=$contractID")->fetch_assoc();
-        $companyID = $contract["companyID"];
-        $company = $sql->query("SELECT compName FROM opts.companies WHERE compID=$companyID")->fetch_assoc();
-        $annexes = $sql->query("SELECT annexID, annexNumber, practiceStart, practiceEnd, practiceType FROM opts.annexes WHERE contractID=$contractID");
-        ?>
-        <li><a href="CompaniesList.php">Компании</a></li>
-    <?php } ?>
-    <li><a href="index.php">Выход</a></li>
-</ul>
+            $sql = new mysqli('localhost', 'root', '');
+            if ($sql->connect_error) {
+                echo 'SQL Connect error!!';
+                return;
+            }
+            $sql->set_charset('utf8');
+            $contractID = test_input($_GET['id']);
+            $contract = $sql->query("SELECT contractNumber, companyID FROM opts.contracts WHERE contractID=$contractID")->fetch_assoc();
+            $companyID = $contract["companyID"];
+            $company = $sql->query("SELECT compName FROM opts.companies WHERE compID=$companyID")->fetch_assoc();
+            $annexes = $sql->query("SELECT annexID, annexNumber, practiceStart, practiceEnd, practiceType FROM opts.annexes WHERE contractID=$contractID");
+            ?>
+            <li class="navbar-item"><a class="nav-link" href="CompaniesList.php">Компании</a></li>
+        <?php } ?>
+    </ul>
+    <ul class="navbar-nav nav navbar-right ml-auto">
+        <li class="navbar-item"><a class="nav-link" href="index.php">Выход</a></li>
+    </ul>
+    </div>
+</nav>
 
-<h2 style="text-align: center">Компания: <?= $company["compName"] ?></h2>
-<h3 style="text-align: center">Контракт: <?= $contract["contractNumber"] ?></h3>
+<div class="container">
+<nav aria-label="breadcrumb" style="margin-top: 15px">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="CompaniesList.php">Компании</a></li>
+        <li class="breadcrumb-item"><a href="CompanyView.php?id=<?=$companyID?>">Контракты</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Приложения</li>
+    </ol>
+</nav>
 
-<button type="button" id="add-annex">Добавить приложение</button>
-<table class="amazing-big-table">
+<h4 style="text-align: center">Компания: <?= $company["compName"] ?></h4>
+<h5 style="text-align: center">Контракт: <?= $contract["contractNumber"] ?></h5>
+
+<button type="button" class="btn" style="float:right; margin-bottom: 15px" id="add-annex">Добавить приложение</button>
+<table class="table table-bordered table-hover">
+    <thead>
     <tr>
         <th>
             Номер приложения
@@ -121,10 +89,9 @@ session_start();
             Тип практики
         </th>
         <th></th>
-        <th></th>
-        <th></th>
     </tr>
-
+    </thead>
+    <tbody>
     <?php
     for ($i = 0; $i < $annexes->num_rows; $i++) {
         $annex = $annexes->fetch_assoc();
@@ -138,101 +105,149 @@ session_start();
             <td><?= $annex["practiceEnd"] ?></td>
             <td><?= $ptype ?></td>
             <td>
-                <a href="AnnexView.php?aid=<?=$aid?>">Студенты</a>
-            </td>
-            <td>
-                <button type="button" class="edit-annex" id="<?=$aid?>">Редактировать</button>
-            </td>
-            <td>
-                <button type="button" class="delete-annex" id="<?=$aid . "/" . $contractID?>">Удалить</button>
+                <button type="button" class="btn btn-secondary" onclick="location.href='AnnexView.php?aid=<?= $aid ?>'">
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                </button>
+                <button type="button" class=" btn btn-secondary edit-annex" id="<?= $aid ?>">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </button>
+                <button type="button" class="btn btn-danger delete-annex" id="<?= $aid . "/" . $contractID ?>">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
             </td>
         </tr>
         <?php
     }
     ?>
+    </tbody>
 </table>
 
 <!-- МОДАЛОЧКА -->
-<div class="annex-modal" id="add-annex-modal">
-    <div class="annex-modal-content">
-        <span class="close">&times;</span>
-        <span class="contID" id="<?= $contractID ?>"></span>
-
-        <form>
-            <div class="inp-label">
-                Номер
+<div class="modal fade" id="add-annex-modal" tabindex="-1" role="dialog" aria-labelledby="add-annex-modal-label">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <span class="contID" id="<?= $contractID ?>" hidden></span>
+            <div class="modal-header">
+                <h5 class="modal-title" id="add-annex-modal-label">Добавить приложение</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <input class="text-input" type="text" id="annexNumber" required>
-            <div class="inp-label">
-                Начало практики
+            <div class="modal-body">
+                <form id="addAnnexForm">
+                    <div class="form-group">
+                        <label for="annexNumberInput-a" class="col-form-label">Номер:</label>
+                        <input type="text" class="form-control" id="annexNumberInput-a">
+                    </div>
+                    <div class="form-group">
+                        <label for="practiceStartInput-a" class="col-form-label">Начало практики:</label>
+                        <input type="date" class="form-control" id="practiceStartInput-a">
+                    </div>
+                    <div class="form-group">
+                        <label for="practiceEndInput-a" class="col-form-label">Конец практики:</label>
+                        <input type="date" class="form-control" id="practiceEndInput-a">
+                    </div>
+                    <div class="form-group">
+                        <label for="practiceTypeSelect-a" class="col-form-label">Тип практики:</label>
+                        <select class="form-control" id="practiceTypeSelect-a">
+                            <option selected disabled>Выберите тип</option>
+                            <?php
+                            $practiceTypes = $sql->query("SELECT * FROM opts.practice_types");
+                            for ($i = 0; $i < $practiceTypes->num_rows; $i++) {
+                                $type = $practiceTypes->fetch_assoc()["type"];
+                                ?>
+                                <option value="<?= $type ?>"><?= $type ?></option>
+                                <?php
+                            }
+                            ?>
+                        </select>
+                    </div>
+                </form>
+                <div class="w-100"></div>
+                <div class="alert alert-danger fade in" id="addErrorAlert" role="alert"
+                     style="display: none">
+                    <p id="addErrorAlertText"></p>
+                </div>
             </div>
-            <input class="text-input" type="date" id="practiceStart" required>
-            <div class="inp-label">
-                Конец практики
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                <button type="button" class="btn" id="add-annex-submit">Добавить приложение</button>
             </div>
-            <input class="text-input" type="date" id="practiceEnd" required>
-            <!-- Practice type select-->
-            <div class="inp-label">
-                Тип практики
-            </div>
-            <select id="practiceType" required style="margin-top: 2px">
-                <option selected disabled>Выберите тип</option>
-                <?php
-                $practiceTypes = $sql->query("SELECT type FROM opts.practice_types");
-                for ($i = 0; $i < $practiceTypes->num_rows; $i++) {
-                    $type = $practiceTypes->fetch_assoc()["type"];
-                    ?>
-                    <option value="<?= $type ?>"><?= $type ?></option>
-                    <?php
-                }
-                ?>
-            </select>
-
-
-            <button type="button" class="modal-form-submit" id="add-annex-submit">Добавить</button>
-        </form>
+        </div>
     </div>
 </div>
 
 <!-- Модалка для редактирования -->
-<div class="annex-modal" id="edit-annex-modal">
-    <div class="annex-modal-content">
-        <span class="close2">&times;</span>
-        <span class="contID" id="<?= $contractID ?>"></span>
-
-        <form id="edit-annex-form">
-            <div class="inp-label">
-                Номер
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="edit-annex-modal-label" id="edit-annex-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="edit-annex-modal-label">Редактировать приложение</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <input name="annexNumber" class="text-input" type="text" id="e-annexNumber" required>
-            <div class="inp-label">
-                Начало практики
+            <div class="modal-body">
+                <form id="edit-annex-form">
+                    <div class="form-froup">
+                        <label for="annexNumberInput-e" class="col-form-label">Номер:</label>
+                        <input type="text" class="form-control" id="annexNumberInput-e">
+                    </div>
+                    <div class="form-group">
+                        <label for="practiceStartInput-e" class="col-form-label">Начало практики:</label>
+                        <input type="date" class="form-control" id="practiceStartInput-e">
+                    </div>
+                    <div class="form-group">
+                        <label for="practiceEndInput-e" class="col-form-label">Конец практики:</label>
+                        <input type="date" class="form-control" id="practiceEndInput-e">
+                    </div>
+                    <div class="form-group">
+                        <label for="practiceTypeSelect-e" class="col-form-label">Тип практики:</label>
+                        <select id="practiceTypeSelect-e" class="form-control">
+                            <option selected disabled>Выберите тип</option>
+                            <?php
+                            $practiceTypes = $sql->query("SELECT * FROM opts.practice_types");
+                            for($i = 0; $i < $practiceTypes->num_rows; $i++) {
+                                $type = $practiceTypes->fetch_assoc()['type'];
+                                ?>
+                                <option value="<?=$type?>"><?=$type?></option>
+                                <?php
+                            }
+                            ?>
+                        </select>
+                    </div>
+                </form>
             </div>
-            <input name="practiceStart" class="text-input" type="date" id="e-practiceStart" required>
-            <div class="inp-label">
-                Конец практики
+            <div class="w-100"></div>
+            <div class="alert alert-danger fade in" id="editErrorAlert" role="alert" style="display: none">
+                <p id="editErrorAlertText"></p>
             </div>
-            <input name="practiceEnd" class="text-input" type="date" id="e-practiceEnd" required>
-            <!-- Practice type select-->
-            <div class="inp-label">
-                Тип практики
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                <button type="button" class="btn" id="edit-annex-submit">Сохранить изменения</button>
             </div>
-            <select name="practiceType" id="e-practiceType" required style="margin-top: 2px">
-                <option selected disabled>Выберите тип</option>
-                <?php
-                $practiceTypes = $sql->query("SELECT type FROM opts.practice_types");
-                for ($i = 0; $i < $practiceTypes->num_rows; $i++) {
-                    $type = $practiceTypes->fetch_assoc()["type"];
-                    ?>
-                    <option value="<?= $type ?>"><?= $type ?></option>
-                    <?php
-                }
-                ?>
-            </select>
-
-
-            <button type="button" class="modal-form-submit" id="edit-annex-submit">Сохранить</button>
-        </form>
+        </div>
     </div>
+</div>
+
+<!-- delete annex warning -->
+<div class="modal fade" id="deleteWarning" tabindex="-1" role="dialog" aria-labelledby="deleteWarningLabel">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteWarningLabel">Удаление контракта</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-labelledby="Close">
+                    <span aria-hidden="true">&times</span></button>
+            </div>
+            <div class="modal-body">
+                <p id="warningDialogText"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                <button class="btn btn-danger" id="deleteConfirm">Удалить</button>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 </body>
