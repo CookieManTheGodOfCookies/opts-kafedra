@@ -79,8 +79,7 @@ $companyID = $sql->query("SELECT companyID FROM opts.contracts WHERE contractID=
         </thead>
         <tbody>
         <?php
-        for ($i = 0; $i < $studentsWithoutPractice->num_rows; $i++) {
-            $studentWP = $studentsWithoutPractice->fetch_assoc();
+        foreach ($studentsWithoutPractice as $studentWP) {
             ?>
             <tr>
                 <td><?= $studentWP["name"] ?></td>

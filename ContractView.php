@@ -93,8 +93,7 @@ include_once ('utils/test_input.php');
     </thead>
     <tbody>
     <?php
-    for ($i = 0; $i < $annexes->num_rows; $i++) {
-        $annex = $annexes->fetch_assoc();
+    foreach ($annexes as $annex) {
         $pid = $annex["practiceType"];
         $ptype = $sql->query("SELECT type FROM opts.practice_types WHERE pid=$pid")->fetch_assoc()["type"];
         $aid = $annex["annexID"];

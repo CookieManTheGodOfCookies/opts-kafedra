@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8fb34330-eb65-416e-a4a8-a5838a18e6a6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StudentList.php" beforeDir="false" afterPath="$PROJECT_DIR$/StudentList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AddStudent.php" beforeDir="false" afterPath="$PROJECT_DIR$/AddStudent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnexView.php" beforeDir="false" afterPath="$PROJECT_DIR$/AnnexView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompaniesList.php" beforeDir="false" afterPath="$PROJECT_DIR$/CompaniesList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompanyView.php" beforeDir="false" afterPath="$PROJECT_DIR$/CompanyView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContractView.php" beforeDir="false" afterPath="$PROJECT_DIR$/ContractView.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -61,8 +65,8 @@
       <file leaf-file-name="CompaniesList.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CompaniesList.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3841">
-              <caret line="167" column="54" selection-start-line="167" selection-start-column="54" selection-end-line="167" selection-end-column="54" />
+            <state relative-caret-position="322">
+              <caret line="90" selection-start-line="90" selection-end-line="90" />
             </state>
           </provider>
         </entry>
@@ -70,8 +74,8 @@
       <file leaf-file-name="CompanyView.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CompanyView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+            <state relative-caret-position="276">
+              <caret line="105" column="38" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -88,8 +92,8 @@
       <file leaf-file-name="ContractView.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ContractView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+            <state relative-caret-position="230">
+              <caret line="95" column="34" selection-start-line="95" selection-start-column="34" selection-end-line="95" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -103,7 +107,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudentList.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StudentList.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/StudentList.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="305">
@@ -115,8 +119,8 @@
       <file leaf-file-name="AnnexView.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AnnexView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1564">
-              <caret line="68" column="10" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
+            <state relative-caret-position="187">
+              <caret line="102" column="51" selection-start-line="102" selection-start-column="51" selection-end-line="102" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -143,11 +147,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddStudent.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AddStudent.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AddStudent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1472">
-              <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+            <state relative-caret-position="138">
+              <caret line="81" column="58" selection-start-line="81" selection-start-column="58" selection-end-line="81" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -218,13 +222,13 @@
         <option value="$PROJECT_DIR$/controllers/GetContractDataById.php" />
         <option value="$PROJECT_DIR$/controllers/RemoveStudent.php" />
         <option value="$PROJECT_DIR$/stylesheets/custom_styles.css" />
-        <option value="$PROJECT_DIR$/CompaniesList.php" />
-        <option value="$PROJECT_DIR$/AddStudent.php" />
-        <option value="$PROJECT_DIR$/ContractView.php" />
-        <option value="$PROJECT_DIR$/CompanyView.php" />
-        <option value="$PROJECT_DIR$/AnnexView.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/StudentList.php" />
+        <option value="$PROJECT_DIR$/CompaniesList.php" />
+        <option value="$PROJECT_DIR$/CompanyView.php" />
+        <option value="$PROJECT_DIR$/ContractView.php" />
+        <option value="$PROJECT_DIR$/AnnexView.php" />
+        <option value="$PROJECT_DIR$/AddStudent.php" />
       </list>
     </option>
   </component>
@@ -289,7 +293,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
+    <property name="ChangesTree.GroupingKeys" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
@@ -373,7 +377,7 @@
       <workItem from="1528950593776" duration="2632000" />
       <workItem from="1529424808084" duration="2170000" />
       <workItem from="1530025215367" duration="634000" />
-      <workItem from="1530161717013" duration="818000" />
+      <workItem from="1530161717013" duration="1096000" />
     </task>
     <task id="LOCAL-00001" summary="Added delete function for annexes.">
       <created>1525423419578</created>
@@ -494,11 +498,18 @@
       <option name="project" value="LOCAL" />
       <updated>1529429852360</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="replaced 'while' with 'foreach'">
+      <created>1530162737914</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1530162737914</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130638000" />
+    <option name="totallyTimeSpent" value="130916000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -516,7 +527,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32852563" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.32744783" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="File Transfer" order="13" visible="true" weight="0.3279743" />
+      <window_info anchor="bottom" id="File Transfer" order="13" weight="0.3279743" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32852563" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="11" />
@@ -562,7 +573,8 @@
     <MESSAGE value="re-styled icons with glyphicons, fixed some bootstrap crap" />
     <MESSAGE value="added bootstrap catalogue" />
     <MESSAGE value="fixed index.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed index.php" />
+    <MESSAGE value="replaced 'while' with 'foreach'" />
+    <option name="LAST_COMMIT_MESSAGE" value="replaced 'while' with 'foreach'" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../ISIT-labs/lab3/lab3_script.js">
@@ -778,28 +790,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CompaniesList.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3841">
-          <caret line="167" column="54" selection-start-line="167" selection-start-column="54" selection-end-line="167" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CompanyView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bootstrap/js/bootstrap.js" />
-    <entry file="file://$PROJECT_DIR$/AnnexView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="68" column="10" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="943">
@@ -814,13 +805,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ContractView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/adders/AddContractModal.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -828,17 +812,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AddStudent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1472">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/StudentList.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
           <caret line="84" selection-start-line="84" selection-end-line="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CompaniesList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="90" selection-start-line="90" selection-end-line="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CompanyView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="105" column="38" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ContractView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="95" column="34" selection-start-line="95" selection-start-column="34" selection-end-line="95" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AnnexView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="102" column="51" selection-start-line="102" selection-start-column="51" selection-end-line="102" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AddStudent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="81" column="58" selection-start-line="81" selection-start-column="58" selection-end-line="81" selection-end-column="58" />
         </state>
       </provider>
     </entry>

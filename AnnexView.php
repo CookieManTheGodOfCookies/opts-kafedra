@@ -100,8 +100,7 @@ $studentsOnPractice = $sql->query("SELECT * FROM opts.students WHERE practiceID=
         </thead>
         <tbody>
         <?php
-        for ($i = 0; $i < $studentsOnPractice->num_rows; $i++) {
-            $student = $studentsOnPractice->fetch_assoc();
+        foreach ($studentsOnPractice as $student) {
             $sid = $student["studentID"];
             ?>
             <tr>

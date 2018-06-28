@@ -103,8 +103,7 @@ $compName = $sql->query("SELECT * FROM opts.companies WHERE compID=$id")->fetch_
         <?php
         $contracts = $sql->query("SELECT contractID, contractNumber, dateOfContract, expirationDate FROM opts.contracts WHERE companyID=$id");
 
-        for ($i = 0; $i < $contracts->num_rows; $i++) {
-            $row = $contracts->fetch_assoc();
+        foreach ($contracts as $row) {
             $cid = $row["contractID"]
             ?>
             <tr>

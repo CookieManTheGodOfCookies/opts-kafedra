@@ -86,8 +86,7 @@ if ($sql->connect_error) {
         </thead>
         <tbody>
         <?php
-        for ($i = 0; $i < $table->num_rows; $i++) {
-            $row = $table->fetch_assoc();
+        foreach ($table as $row) {
             $cid = $row["compID"];
             ?>
             <tr>
