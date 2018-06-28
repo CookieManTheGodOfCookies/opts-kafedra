@@ -82,7 +82,7 @@ session_start();
         </thead>
         <tbody>
         <?php
-        while ($row = $table->fetch_assoc()) {
+                foreach ($table as $row) {
             ?>
             <tr>
                 <td class="student-id" id="<?= $row['studentID'] ?>" hidden></td>
